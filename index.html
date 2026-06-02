@@ -401,12 +401,12 @@
                 left: 0;
                 right: 0;
                 width: 100%;
-                height: 52px;
+                height: 64px;
                 border-radius: 20px 20px 0 0;
                 border: none;
                 border-bottom: 1px solid rgba(159, 134, 107, 0.15);
                 background: var(--dark-2);
-                font-size: 12px;
+                font-size: 14px;
                 letter-spacing: 3px;
                 font-family: 'Montserrat', sans-serif;
                 text-transform: uppercase;
@@ -1077,14 +1077,6 @@
 
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-        // Swipe down to close on mobile
-        let touchStartY = 0;
-        document.querySelector('.modal').addEventListener('touchstart', e => {
-            touchStartY = e.touches[0].clientY;
-        }, { passive: true });
-        document.querySelector('.modal').addEventListener('touchend', e => {
-            if (e.changedTouches[0].clientY - touchStartY > 80) closeModal();
-        }, { passive: true });
 
         function buildMedia() {
             setMedia(0);
