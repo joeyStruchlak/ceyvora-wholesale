@@ -398,19 +398,21 @@
         @media (max-width: 768px) {
             .modal-close {
                 position: sticky;
-                top: 0;
+                bottom: 0;
+                top: auto;
                 left: 0;
                 right: 0;
                 width: 100%;
-                height: 56px;
+                height: 64px;
                 padding: 0;
                 border-radius: 0;
                 border: none;
-                border-bottom: 1px solid rgba(159, 134, 107, 0.2);
-                background: var(--dark-2);
-                font-size: 11px;
+                border-top: 1px solid rgba(159, 134, 107, 0.2);
+                background: var(--dark);
+                font-size: 12px;
                 letter-spacing: 3px;
                 justify-content: center;
+                margin-top: 16px;
             }
         }
 
@@ -994,11 +996,12 @@
                             <div class="mini-error" id="miniError">Incorrect code. Please try again.</div>
                         </div>
                     </div>
-<div class="pricing-unlocked" id="pricingUnlocked">
-    <div class="spec-label" style="margin-bottom:6px;">Trade Price</div>
-    <div class="price-amount" id="priceAmount"></div>
-    <div id="priceDeposit" class="price-deposit" style="color:var(--gold);margin-top:6px;">or make us an offer</div>
-</div>
+                    <div class="pricing-unlocked" id="pricingUnlocked">
+                        <div class="spec-label" style="margin-bottom:6px;">Trade Price</div>
+                        <div class="price-amount" id="priceAmount"></div>
+                        <div id="priceDeposit" class="price-deposit" style="color:var(--gold);margin-top:6px;">or make
+                            us an offer</div>
+                    </div>
                 </div>
 
                 <button class="enquire-btn" onclick="toggleEnquiry()">Enquire / Make an Offer</button>
@@ -1083,11 +1086,15 @@
 
             document.getElementById('modalOverlay').classList.add('active');
             document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
         }
 
         function closeModal() {
             document.getElementById('modalOverlay').classList.remove('active');
             document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
             // Pause any playing video
             const v = document.querySelector('#mediaMain video');
             if (v) v.pause();
