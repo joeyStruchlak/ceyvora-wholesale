@@ -1007,9 +1007,9 @@
             const m = currentStone.media[i];
             const main = document.getElementById('mediaMain');
             if (m.type === 'video') {
-                main.innerHTML = `
+main.innerHTML = `
   <div style="position:relative;width:100%;height:100%;background:#111;">
-    <iframe src="${m.src}" style="width:100%;height:100%;border:none;display:block;" allow="autoplay" allowfullscreen></iframe>
+    <iframe src="${m.src}?rm=minimal" style="width:100%;height:100%;border:none;display:block;" allow="autoplay" allowfullscreen></iframe>
     <div onclick="this.style.display='none';this.previousElementSibling.src=this.previousElementSibling.src+'&autoplay=1';" 
          style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(0,0,0,0.3);">
       <div style="width:60px;height:60px;background:rgba(159,134,107,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;color:#0a0a0a;">▶</div>
