@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ceyvora & Co. Trade Catalogue</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">emailjs.init('UZa06lSRaNBcukGk0');</script>
+    <link rel="icon" type="image/png" href="assets/favicey.png">
+    <meta property="og:title" content="Ceyvora & Co. — Trade Catalogue">
+    <meta property="og:description" content="Certified Natural Ceylon & Madagascar Sapphires. Wholesale Trade Access.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/d/1jPH1VKrdqABKNWgnFcknGe-GILozI70Y">
+    <meta property="og:url" content="https://wholesale.ceyvora.com.au">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
@@ -200,20 +207,20 @@
             background: rgba(184, 147, 90, 0.15);
         }
 
-.stone-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
-    padding: 0 16px;
-}
+        .stone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+            padding: 0 16px;
+        }
 
-@media (max-width: 600px) {
-    .stone-grid {
-        grid-template-columns: calc(50% - 8px) calc(50% - 8px) !important;
-        gap: 16px !important;
-        padding: 0 16px !important;
-    }
-}
+        @media (max-width: 600px) {
+            .stone-grid {
+                grid-template-columns: calc(50% - 8px) calc(50% - 8px) !important;
+                gap: 16px !important;
+                padding: 0 16px !important;
+            }
+        }
 
         .stone-card {
             position: relative;
@@ -314,8 +321,11 @@
             transform: translateY(0);
         }
 
-        .card-btn:hover {
-            background: rgba(184, 147, 90, 0.25);
+        @media (hover: none) {
+            .card-btn {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
         }
 
         /* ── MODAL ── */
@@ -364,18 +374,62 @@
             position: absolute;
             top: 18px;
             right: 22px;
-            background: none;
-            border: none;
-            color: var(--grey);
-            font-size: 22px;
+            background: rgba(30, 30, 30, 0.9);
+            border: 1px solid rgba(159, 134, 107, 0.3);
+            color: var(--cream);
+            font-size: 16px;
             cursor: pointer;
             z-index: 10;
-            transition: color 0.2s;
+            transition: background 0.2s;
             line-height: 1;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .modal-close:hover {
-            color: var(--cream);
+            background: rgba(159, 134, 107, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .modal-close {
+                position: sticky;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 52px;
+                border-radius: 20px 20px 0 0;
+                border: none;
+                border-bottom: 1px solid rgba(159, 134, 107, 0.15);
+                background: var(--dark-2);
+                font-size: 12px;
+                letter-spacing: 3px;
+                font-family: 'Montserrat', sans-serif;
+                text-transform: uppercase;
+                color: var(--grey);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                z-index: 20;
+                margin: 0;
+            }
+
+            .modal-close::before {
+                content: '';
+                position: absolute;
+                top: 8px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 36px;
+                height: 4px;
+                background: rgba(159, 134, 107, 0.35);
+                border-radius: 2px;
+            }
         }
 
         /* Media */
@@ -770,21 +824,43 @@
             }
 
             .stone-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 3px;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 10px !important;
+                padding: 0 10px !important;
+            }
+
+            .modal-overlay {
+                align-items: flex-end;
+                padding: 0;
             }
 
             .modal {
                 grid-template-columns: 1fr;
-                max-height: 95vh;
+                max-height: 92vh;
+                width: 100%;
+                border-radius: 20px 20px 0 0;
+                border-bottom: none;
+                animation: slideUpMobile 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            @keyframes slideUpMobile {
+                from {
+                    transform: translateY(100%);
+                }
+
+                to {
+                    transform: translateY(0);
+                }
             }
 
             .media-main {
-                height: 280px;
+                height: 260px;
             }
 
             .modal-info {
-                padding: 28px 20px 24px;
+                padding: 20px 20px 48px;
             }
 
             footer {
@@ -804,7 +880,9 @@
 
         @media (max-width: 480px) {
             .stone-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 8px !important;
+                padding: 0 8px !important;
             }
         }
 
@@ -839,12 +917,11 @@
         <div></div>
         <h1>Trade<br><span>Catalogue</span></h1>
 
-        <p class="hero-sub">Direct from Sri Lanka's Ratnapura Region · Ceylon & Madagascar Origin</p>
-        <p class="hero-access">
-            Pricing visible to verified trade buyers only.<br>
-            Contact us to request access: <a href="mailto:info@ceyvora.com.au">info@ceyvora.com.au</a> · <a
-                href="tel:0458486576">0458 486 576</a>
-        </p>
+<p class="hero-access">
+    Pricing visible to verified trade buyers only.<br>
+    Contact us to request access: <a style="color:var(--gold);">info@ceyvora.com.au</a> · <a style="color:var(--gold);">0458 486 576</a>
+</p>
+<p class="hero-sub" style="font-size:13px;margin-top:16px;">Direct from Sri Lanka's Ratnapura Region · Ceylon & Madagascar Origin · Certified</p>
     </section>
 
     <section class="catalogue">
@@ -902,12 +979,12 @@
                     </div>
                 </div>
 
-                <button class="enquire-btn" onclick="toggleEnquiry()">Enquire About This Stone</button>
+                <button class="enquire-btn" onclick="toggleEnquiry()">Enquire / Make an Offer</button>
                 <div class="enquiry-form" id="enquiryForm">
-                    <input type="text" id="eqName" placeholder="Your Name">
-                    <input type="text" id="eqBusiness" placeholder="Business Name">
-                    <input type="tel" id="eqPhone" placeholder="Phone Number">
-                    <textarea id="eqMessage" placeholder="Message (optional)"></textarea>
+                    <input type="text" id="eqBusiness" placeholder="Business Name *" required>
+                    <input type="email" id="eqEmail" placeholder="Email Address *" required>
+                    <input type="tel" id="eqPhone" placeholder="Phone Number (optional)">
+                    <textarea id="eqMessage" placeholder="Your enquiry or offer..." style="height:80px;"></textarea>
                     <button class="enquiry-submit" onclick="submitEnquiry()">Send Enquiry</button>
                 </div>
             </div>
@@ -1000,6 +1077,15 @@
 
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
+        // Swipe down to close on mobile
+        let touchStartY = 0;
+        document.querySelector('.modal').addEventListener('touchstart', e => {
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+        document.querySelector('.modal').addEventListener('touchend', e => {
+            if (e.changedTouches[0].clientY - touchStartY > 80) closeModal();
+        }, { passive: true });
+
         function buildMedia() {
             setMedia(0);
             const thumbs = document.getElementById('mediaThumbs');
@@ -1015,7 +1101,7 @@
             const m = currentStone.media[i];
             const main = document.getElementById('mediaMain');
             if (m.type === 'video') {
-main.innerHTML = `
+                main.innerHTML = `
   <div style="position:relative;width:100%;height:100%;background:#111;">
     <iframe src="${m.src}?rm=minimal" style="width:100%;height:100%;border:none;display:block;" allow="autoplay" allowfullscreen></iframe>
     <div onclick="this.style.display='none';this.previousElementSibling.src=this.previousElementSibling.src+'&autoplay=1';" 
@@ -1065,15 +1151,39 @@ main.innerHTML = `
         }
 
         function submitEnquiry() {
-            const stone = currentStone ? `${currentStone.name} ${currentStone.carats}` : '';
-            const body = [
-                `Stone: ${stone}`,
-                `Name: ${document.getElementById('eqName').value}`,
-                `Business: ${document.getElementById('eqBusiness').value}`,
-                `Phone: ${document.getElementById('eqPhone').value}`,
-                `Message: ${document.getElementById('eqMessage').value}`
-            ].join('\n');
-            window.location.href = `mailto:info@ceyvora.com.au?subject=${encodeURIComponent('Trade Enquiry — ' + stone)}&body=${encodeURIComponent(body)}`;
+            const business = document.getElementById('eqBusiness').value;
+            const email = document.getElementById('eqEmail').value;
+            const phone = document.getElementById('eqPhone').value;
+            const message = document.getElementById('eqMessage').value;
+
+            if (!business || !email) {
+                alert('Please enter your business name and email address.');
+                return;
+            }
+
+            const stone = currentStone ? `${currentStone.name} ${currentStone.carats} · ${currentStone.origin}` : '';
+
+            const btn = document.querySelector('.enquiry-submit');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            emailjs.send('service_v7kiteu', 'template_wor12ia', {
+                stone: stone,
+                business: business,
+                email: email,
+                phone: phone || 'Not provided',
+                message: message || 'No message'
+            }).then(() => {
+                btn.textContent = 'Enquiry Sent ✓';
+                btn.style.color = '#4A9ECC';
+                document.getElementById('eqBusiness').value = '';
+                document.getElementById('eqEmail').value = '';
+                document.getElementById('eqPhone').value = '';
+                document.getElementById('eqMessage').value = '';
+            }).catch(() => {
+                btn.textContent = 'Send Failed — Try Again';
+                btn.disabled = false;
+            });
         }
 
         loadStones();
