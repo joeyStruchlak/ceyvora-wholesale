@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Blue Sapphire",
+    "subtitle": "Madagascar",
+    "grade": "AAA",
+    "origin": "Madagascar",
+    "colour": "Vivid Blue",
+    "carats": "2.04ct",
+    "dimensions": "7.00 × 6.50 × 4.20mm",
+    "treatment": "Unheated & Untreated",
+    "certification": "Included",
+    "price": "AUD $4,200",
+    "deposit": "50% deposit required · AUD $2,100 to proceed",
+    "thumbImage": "https://lh3.googleusercontent.com/d/1jPH1VKrdqABKNWgnFcknGe-GILozI70Y",
+    "media": [
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/1P9wtvb3pElJTFXKUaQVOAOlUROuppJfm" },
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/11ySymnwDDvVP0IvSK2I8UY2ZmZ87grgQ" },
+      { "type": "video", "src": "https://drive.google.com/file/d/1_q76x4XlGnekGu-uJP8W7BS9ylCXQnl_/preview" }
+    ]
+  }
+]
