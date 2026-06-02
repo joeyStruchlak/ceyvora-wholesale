@@ -36,54 +36,54 @@
             min-height: 100vh;
         }
 
- header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    background: rgba(10, 10, 10, 0.96);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(184, 147, 90, 0.18);
-    padding: 16px 48px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(184, 147, 90, 0.18);
+            padding: 16px 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
 
-.logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
 
-.logo img {
-    height: 90px;
-    width: auto;
-    filter: brightness(0) saturate(100%) invert(58%) sepia(20%) saturate(400%) hue-rotate(355deg) brightness(95%);
-}
+        .logo img {
+            height: 90px;
+            width: auto;
+            filter: brightness(0) saturate(100%) invert(58%) sepia(20%) saturate(400%) hue-rotate(355deg) brightness(95%);
+        }
 
-.logo-text {
-    font-family: 'Cinzel', serif;
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 4px;
-    color: var(--cream);
-    text-transform: uppercase;
-}
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            color: var(--cream);
+            text-transform: uppercase;
+        }
 
-.header-tag {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 19px;
-    letter-spacing: 3px;
-    color: var(--grey);
-    text-transform: uppercase;
-    border: 1px solid rgba(184, 147, 90, 0.2);
-    padding: 5px 14px;
-}
+        .header-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 19px;
+            letter-spacing: 3px;
+            color: var(--grey);
+            text-transform: uppercase;
+            border: 1px solid rgba(184, 147, 90, 0.2);
+            padding: 5px 14px;
+        }
 
         /* ── HERO ── */
         .hero {
@@ -816,12 +816,12 @@
 
 <body>
 
-<header>
-    <div class="logo">
-        <img src="assets/Ceyvora-logo.png" alt="Ceyvora & Co." onerror="this.style.display='none'">
-        <div class="header-tag">· Wholesale Only ·</div>
-    </div>
-</header>
+    <header>
+        <div class="logo">
+            <img src="assets/Ceyvora-logo.png" alt="Ceyvora & Co." onerror="this.style.display='none'">
+            <div class="header-tag">· Wholesale Only ·</div>
+        </div>
+    </header>
 
     <section class="hero">
         <div>
@@ -830,7 +830,7 @@
         </div>
         <div></div>
         <h1>Trade<br><span>Catalogue</span></h1>
-        
+
         <p class="hero-sub">Direct from Sri Lanka's Ratnapura Region · Ceylon & Madagascar Origin</p>
         <p class="hero-access">
             Pricing visible to verified trade buyers only.<br>
@@ -1007,7 +1007,14 @@
             const m = currentStone.media[i];
             const main = document.getElementById('mediaMain');
             if (m.type === 'video') {
-                main.innerHTML = `<iframe src="${m.src}" style="width:100%;height:100%;border:none;display:block;" allow="autoplay" allowfullscreen></iframe>`;
+                main.innerHTML = `
+  <div style="position:relative;width:100%;height:100%;background:#111;">
+    <iframe src="${m.src}" style="width:100%;height:100%;border:none;display:block;" allow="autoplay" allowfullscreen></iframe>
+    <div onclick="this.style.display='none';this.previousElementSibling.src=this.previousElementSibling.src+'&autoplay=1';" 
+         style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(0,0,0,0.3);">
+      <div style="width:60px;height:60px;background:rgba(159,134,107,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;color:#0a0a0a;">▶</div>
+    </div>
+  </div>`;
             } else {
                 main.innerHTML = `<img src="${m.src}" alt="Stone" style="width:100%;height:100%;object-fit:cover;display:block;">`;
             }
