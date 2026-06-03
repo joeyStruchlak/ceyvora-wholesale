@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -12,7 +13,9 @@
     <meta property="og:image" content="https://lh3.googleusercontent.com/d/1jPH1VKrdqABKNWgnFcknGe-GILozI70Y">
     <meta property="og:url" content="https://wholesale.ceyvora.com.au">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --gold: #B8935A;
@@ -26,7 +29,11 @@
             --info: #4A9ECC;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             background: var(--black);
@@ -37,9 +44,9 @@
 
         /* ── HEADER ── */
         header {
-            background: rgba(10,10,10,0.96);
+            background: rgba(10, 10, 10, 0.96);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(184,147,90,0.18);
+            border-bottom: 1px solid rgba(184, 147, 90, 0.18);
             padding: 16px 48px;
             display: flex;
             align-items: center;
@@ -49,7 +56,9 @@
 
         header.is-fixed {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
         }
 
@@ -74,7 +83,7 @@
             letter-spacing: 3px;
             color: var(--grey);
             text-transform: uppercase;
-            border: 1px solid rgba(184,147,90,0.2);
+            border: 1px solid rgba(184, 147, 90, 0.2);
             padding: 4px 12px;
         }
 
@@ -102,7 +111,7 @@
 
         .header-trade-input {
             background: var(--dark-3);
-            border: 1px solid rgba(184,147,90,0.25);
+            border: 1px solid rgba(184, 147, 90, 0.25);
             color: var(--cream);
             padding: 8px 12px;
             font-family: 'Montserrat', sans-serif;
@@ -113,8 +122,14 @@
             transition: border-color 0.2s;
         }
 
-        .header-trade-input:focus { border-color: var(--gold); }
-        .header-trade-input::placeholder { color: var(--grey); font-size: 9px; }
+        .header-trade-input:focus {
+            border-color: var(--gold);
+        }
+
+        .header-trade-input::placeholder {
+            color: var(--grey);
+            font-size: 9px;
+        }
 
         .header-trade-btn {
             background: var(--gold);
@@ -131,7 +146,9 @@
             white-space: nowrap;
         }
 
-        .header-trade-btn:hover { background: var(--gold-light); }
+        .header-trade-btn:hover {
+            background: var(--gold-light);
+        }
 
         .header-trade-status {
             font-family: 'Montserrat', sans-serif;
@@ -140,8 +157,13 @@
             height: 14px;
         }
 
-        .status-unlocked { color: #4CAF50; }
-        .status-error { color: #cc4444; }
+        .status-unlocked {
+            color: #4CAF50;
+        }
+
+        .status-error {
+            color: #cc4444;
+        }
 
         /* ── HERO ── */
         .hero {
@@ -154,10 +176,12 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 50%; left: 50%;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
-            width: 600px; height: 400px;
-            background: radial-gradient(ellipse, rgba(184,147,90,0.05) 0%, transparent 70%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(ellipse, rgba(184, 147, 90, 0.05) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -172,7 +196,9 @@
             text-transform: uppercase;
         }
 
-        .hero h1 span { color: var(--gold); }
+        .hero h1 span {
+            color: var(--gold);
+        }
 
         .hero-sub {
             font-family: 'Montserrat', sans-serif;
@@ -196,14 +222,17 @@
             gap: 16px;
         }
 
-        .hero-eyebrow::before, .hero-eyebrow::after {
+        .hero-eyebrow::before,
+        .hero-eyebrow::after {
             content: '';
-            width: 40px; height: 1px;
-            background: rgba(184,147,90,0.4);
+            width: 40px;
+            height: 1px;
+            background: rgba(184, 147, 90, 0.4);
         }
 
         .gold-rule {
-            width: 1px; height: 50px;
+            width: 1px;
+            height: 50px;
             background: linear-gradient(to bottom, transparent, var(--gold), transparent);
             margin: 28px auto;
             opacity: 0.5;
@@ -236,7 +265,7 @@
         .hero-trade-input {
             flex: 1;
             background: var(--dark-2);
-            border: 1px solid rgba(184,147,90,0.3);
+            border: 1px solid rgba(184, 147, 90, 0.3);
             border-right: none;
             color: var(--cream);
             padding: 14px 20px;
@@ -248,8 +277,15 @@
             transition: border-color 0.2s;
         }
 
-        .hero-trade-input:focus { border-color: var(--gold); }
-        .hero-trade-input::placeholder { color: var(--grey); font-size: 10px; letter-spacing: 2px; }
+        .hero-trade-input:focus {
+            border-color: var(--gold);
+        }
+
+        .hero-trade-input::placeholder {
+            color: var(--grey);
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
 
         .hero-trade-btn {
             background: var(--gold);
@@ -266,7 +302,9 @@
             white-space: nowrap;
         }
 
-        .hero-trade-btn:hover { background: var(--gold-light); }
+        .hero-trade-btn:hover {
+            background: var(--gold-light);
+        }
 
         .hero-trade-status {
             font-family: 'Montserrat', sans-serif;
@@ -317,7 +355,11 @@
             white-space: nowrap;
         }
 
-        .section-line { flex: 1; height: 1px; background: rgba(184,147,90,0.15); }
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: rgba(184, 147, 90, 0.15);
+        }
 
         .stone-grid {
             display: grid;
@@ -334,21 +376,27 @@
             background: var(--dark-2);
         }
 
-        .stone-card-media { width: 100%; height: 100%; }
+        .stone-card-media {
+            width: 100%;
+            height: 100%;
+        }
 
         .stone-card-media img {
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             display: block;
         }
 
-        .stone-card:hover .stone-card-media img { transform: scale(1.06); }
+        .stone-card:hover .stone-card-media img {
+            transform: scale(1.06);
+        }
 
         .stone-card-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 40%, transparent 100%);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 40%, transparent 100%);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -360,12 +408,12 @@
             font-size: 8px;
             letter-spacing: 3px;
             color: var(--gold);
-            border: 1px solid rgba(184,147,90,0.45);
+            border: 1px solid rgba(184, 147, 90, 0.45);
             padding: 3px 10px;
             display: inline-block;
             margin-bottom: 10px;
             align-self: flex-start;
-            background: rgba(0,0,0,0.3);
+            background: rgba(0, 0, 0, 0.3);
         }
 
         .card-name {
@@ -391,8 +439,8 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(184,147,90,0.12);
-            border: 1px solid rgba(184,147,90,0.35);
+            background: rgba(184, 147, 90, 0.12);
+            border: 1px solid rgba(184, 147, 90, 0.35);
             color: var(--gold);
             padding: 9px 16px;
             font-family: 'Montserrat', sans-serif;
@@ -407,10 +455,16 @@
             white-space: nowrap;
         }
 
-        .stone-card:hover .card-btn { opacity: 1; transform: translateY(0); }
+        .stone-card:hover .card-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         @media (hover: none) {
-            .card-btn { opacity: 1 !important; transform: translateY(0) !important; }
+            .card-btn {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
         }
 
         /* ── MODAL ── */
@@ -418,7 +472,7 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.88);
+            background: rgba(0, 0, 0, 0.88);
             backdrop-filter: blur(20px);
             z-index: 300;
             align-items: center;
@@ -426,11 +480,13 @@
             padding: 20px;
         }
 
-        .modal-overlay.active { display: flex; }
+        .modal-overlay.active {
+            display: flex;
+        }
 
         .modal {
             background: var(--dark-2);
-            border: 1px solid rgba(184,147,90,0.12);
+            border: 1px solid rgba(184, 147, 90, 0.12);
             max-width: 980px;
             width: 100%;
             max-height: 92vh;
@@ -442,15 +498,23 @@
         }
 
         @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .modal-close {
             position: absolute;
-            top: 18px; right: 22px;
-            background: rgba(30,30,30,0.95);
-            border: 1px solid rgba(159,134,107,0.3);
+            top: 18px;
+            right: 22px;
+            background: rgba(30, 30, 30, 0.95);
+            border: 1px solid rgba(159, 134, 107, 0.3);
             color: var(--cream);
             font-size: 13px;
             letter-spacing: 2px;
@@ -465,17 +529,27 @@
             transition: background 0.2s;
         }
 
-        .modal-close:hover { background: rgba(159,134,107,0.2); }
+        .modal-close:hover {
+            background: rgba(159, 134, 107, 0.2);
+        }
 
-        .modal-media { background: var(--dark-3); }
+        .modal-media {
+            background: var(--dark-3);
+        }
 
         .media-main {
-            width: 100%; height: 400px;
+            width: 100%;
+            height: 400px;
             overflow: hidden;
             background: var(--dark-3);
         }
 
-        .media-main img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .media-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
         .media-thumbs {
             display: flex;
@@ -487,7 +561,8 @@
         }
 
         .media-thumb {
-            width: 68px; height: 54px;
+            width: 68px;
+            height: 54px;
             object-fit: cover;
             cursor: pointer;
             opacity: 0.55;
@@ -497,7 +572,8 @@
         }
 
         .media-thumb-video {
-            width: 68px; height: 54px;
+            width: 68px;
+            height: 54px;
             background: var(--dark-3);
             display: flex;
             align-items: center;
@@ -509,9 +585,12 @@
             color: var(--gold);
         }
 
-        .media-thumb.active, .media-thumb:hover,
-        .media-thumb-video.active, .media-thumb-video:hover {
-            opacity: 1; border-color: var(--gold);
+        .media-thumb.active,
+        .media-thumb:hover,
+        .media-thumb-video.active,
+        .media-thumb-video:hover {
+            opacity: 1;
+            border-color: var(--gold);
         }
 
         .modal-info {
@@ -525,7 +604,7 @@
             font-size: 8px;
             letter-spacing: 3px;
             color: var(--gold);
-            border: 1px solid rgba(184,147,90,0.35);
+            border: 1px solid rgba(184, 147, 90, 0.35);
             padding: 4px 12px;
             display: inline-block;
             align-self: flex-start;
@@ -552,7 +631,12 @@
             font-style: italic;
         }
 
-        .divider { width: 100%; height: 1px; background: rgba(184,147,90,0.12); margin: 0 0 20px; }
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(184, 147, 90, 0.12);
+            margin: 0 0 20px;
+        }
 
         .specs-grid {
             display: grid;
@@ -580,15 +664,23 @@
         /* ── PRICING BOX ── */
         .pricing-box {
             background: var(--dark-3);
-            border: 1px solid rgba(184,147,90,0.12);
+            border: 1px solid rgba(184, 147, 90, 0.12);
             padding: 20px;
             margin-bottom: 16px;
         }
 
         /* Unlocked state */
-        .pricing-unlocked { display: none; }
-        .pricing-unlocked.active { display: block; }
-        .pricing-locked.hidden { display: none; }
+        .pricing-unlocked {
+            display: none;
+        }
+
+        .pricing-unlocked.active {
+            display: block;
+        }
+
+        .pricing-locked.hidden {
+            display: none;
+        }
 
         .price-amount {
             font-family: 'Cinzel', serif;
@@ -608,7 +700,9 @@
         }
 
         /* Locked state — two options */
-        .pricing-locked { text-align: center; }
+        .pricing-locked {
+            text-align: center;
+        }
 
         .pricing-locked-title {
             font-family: 'Cinzel', serif;
@@ -652,24 +746,34 @@
             font-weight: 600;
         }
 
-        .pricing-opt-btn.primary:hover { background: var(--gold-light); }
+        .pricing-opt-btn.primary:hover {
+            background: var(--gold-light);
+        }
 
         .pricing-opt-btn.secondary {
             background: none;
-            border: 1px solid rgba(184,147,90,0.4);
+            border: 1px solid rgba(184, 147, 90, 0.4);
             color: var(--gold);
         }
 
-        .pricing-opt-btn.secondary:hover { background: rgba(184,147,90,0.08); }
+        .pricing-opt-btn.secondary:hover {
+            background: rgba(184, 147, 90, 0.08);
+        }
 
         /* Code entry panel */
-        .code-panel { display: none; margin-top: 16px; }
-        .code-panel.active { display: block; }
+        .code-panel {
+            display: none;
+            margin-top: 16px;
+        }
+
+        .code-panel.active {
+            display: block;
+        }
 
         .code-panel input {
             width: 100%;
             background: var(--dark);
-            border: 1px solid rgba(184,147,90,0.25);
+            border: 1px solid rgba(184, 147, 90, 0.25);
             color: var(--cream);
             padding: 12px 14px;
             font-family: 'Montserrat', sans-serif;
@@ -681,7 +785,9 @@
             transition: border-color 0.2s;
         }
 
-        .code-panel input:focus { border-color: var(--gold); }
+        .code-panel input:focus {
+            border-color: var(--gold);
+        }
 
         .code-panel button {
             width: 100%;
@@ -724,15 +830,25 @@
             margin-bottom: 8px;
         }
 
-        .enquire-btn:hover { background: var(--gold-light); }
+        .enquire-btn:hover {
+            background: var(--gold-light);
+        }
 
-        .enquiry-form { display: none; flex-direction: column; gap: 6px; margin-top: 10px; }
-        .enquiry-form.active { display: flex; }
+        .enquiry-form {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .enquiry-form.active {
+            display: flex;
+        }
 
         .enquiry-form input,
         .enquiry-form textarea {
             background: var(--dark-3);
-            border: 1px solid rgba(184,147,90,0.18);
+            border: 1px solid rgba(184, 147, 90, 0.18);
             color: var(--cream);
             padding: 10px 14px;
             font-family: 'Montserrat', sans-serif;
@@ -743,16 +859,24 @@
         }
 
         .enquiry-form input::placeholder,
-        .enquiry-form textarea::placeholder { color: var(--grey); font-size: 10px; letter-spacing: 1px; }
+        .enquiry-form textarea::placeholder {
+            color: var(--grey);
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
 
         .enquiry-form input:focus,
-        .enquiry-form textarea:focus { border-color: var(--gold); }
+        .enquiry-form textarea:focus {
+            border-color: var(--gold);
+        }
 
-        .enquiry-form textarea { height: 72px; }
+        .enquiry-form textarea {
+            height: 72px;
+        }
 
         .enquiry-submit {
             background: var(--dark-3);
-            border: 1px solid rgba(184,147,90,0.35);
+            border: 1px solid rgba(184, 147, 90, 0.35);
             color: var(--gold);
             padding: 11px;
             font-family: 'Montserrat', sans-serif;
@@ -763,14 +887,16 @@
             transition: background 0.2s;
         }
 
-        .enquiry-submit:hover { background: rgba(184,147,90,0.08); }
+        .enquiry-submit:hover {
+            background: rgba(184, 147, 90, 0.08);
+        }
 
         /* ── TRADE REGISTRATION MODAL ── */
         .trade-overlay {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.92);
+            background: rgba(0, 0, 0, 0.92);
             backdrop-filter: blur(20px);
             z-index: 400;
             align-items: center;
@@ -778,11 +904,13 @@
             padding: 20px;
         }
 
-        .trade-overlay.active { display: flex; }
+        .trade-overlay.active {
+            display: flex;
+        }
 
         .trade-modal {
             background: var(--dark-2);
-            border: 1px solid rgba(184,147,90,0.15);
+            border: 1px solid rgba(184, 147, 90, 0.15);
             max-width: 680px;
             width: 100%;
             max-height: 92vh;
@@ -792,7 +920,7 @@
 
         .trade-modal-header {
             padding: 36px 40px 24px;
-            border-bottom: 1px solid rgba(184,147,90,0.12);
+            border-bottom: 1px solid rgba(184, 147, 90, 0.12);
             text-align: center;
         }
 
@@ -814,7 +942,9 @@
             line-height: 1.8;
         }
 
-        .trade-modal-body { padding: 32px 40px; }
+        .trade-modal-body {
+            padding: 32px 40px;
+        }
 
         .trade-section-title {
             font-family: 'Cinzel', serif;
@@ -824,7 +954,7 @@
             color: var(--gold);
             margin-bottom: 16px;
             padding-bottom: 8px;
-            border-bottom: 1px solid rgba(184,147,90,0.15);
+            border-bottom: 1px solid rgba(184, 147, 90, 0.15);
         }
 
         .trade-grid {
@@ -834,9 +964,15 @@
             margin-bottom: 24px;
         }
 
-        .trade-grid.full { grid-template-columns: 1fr; }
+        .trade-grid.full {
+            grid-template-columns: 1fr;
+        }
 
-        .trade-field { display: flex; flex-direction: column; gap: 4px; }
+        .trade-field {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
 
         .trade-field label {
             font-family: 'Montserrat', sans-serif;
@@ -850,7 +986,7 @@
         .trade-field select,
         .trade-field textarea {
             background: var(--dark-3);
-            border: 1px solid rgba(184,147,90,0.2);
+            border: 1px solid rgba(184, 147, 90, 0.2);
             color: var(--cream);
             padding: 10px 14px;
             font-family: 'Montserrat', sans-serif;
@@ -868,20 +1004,31 @@
             cursor: pointer;
         }
 
-        .trade-field select option { background: var(--dark-2); color: var(--cream); }
+        .trade-field select option {
+            background: var(--dark-2);
+            color: var(--cream);
+        }
 
         .trade-field input:focus,
         .trade-field select:focus,
-        .trade-field textarea:focus { border-color: var(--gold); }
+        .trade-field textarea:focus {
+            border-color: var(--gold);
+        }
 
         .trade-field input::placeholder,
-        .trade-field textarea::placeholder { color: var(--grey); font-size: 10px; }
+        .trade-field textarea::placeholder {
+            color: var(--grey);
+            font-size: 10px;
+        }
 
-        .trade-field textarea { height: 80px; resize: none; }
+        .trade-field textarea {
+            height: 80px;
+            resize: none;
+        }
 
         .trade-notice {
-            background: rgba(184,147,90,0.06);
-            border: 1px solid rgba(184,147,90,0.15);
+            background: rgba(184, 147, 90, 0.06);
+            border: 1px solid rgba(184, 147, 90, 0.15);
             padding: 16px;
             margin-bottom: 20px;
             text-align: center;
@@ -895,7 +1042,9 @@
             line-height: 1.8;
         }
 
-        .trade-notice strong { color: var(--gold); }
+        .trade-notice strong {
+            color: var(--gold);
+        }
 
         .trade-submit {
             width: 100%;
@@ -913,7 +1062,9 @@
             margin-bottom: 12px;
         }
 
-        .trade-submit:hover { background: var(--gold-light); }
+        .trade-submit:hover {
+            background: var(--gold-light);
+        }
 
         .trade-cancel {
             width: 100%;
@@ -929,11 +1080,13 @@
             transition: color 0.2s;
         }
 
-        .trade-cancel:hover { color: var(--cream); }
+        .trade-cancel:hover {
+            color: var(--cream);
+        }
 
         /* ── FOOTER ── */
         footer {
-            border-top: 1px solid rgba(184,147,90,0.12);
+            border-top: 1px solid rgba(184, 147, 90, 0.12);
             padding: 36px 48px;
             display: flex;
             align-items: center;
@@ -958,7 +1111,10 @@
             line-height: 2;
         }
 
-        .footer-info a { color: var(--gold-light); text-decoration: none; }
+        .footer-info a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
 
         .loading {
             text-align: center;
@@ -972,19 +1128,40 @@
 
         /* ── MOBILE ── */
         @media (max-width: 768px) {
-            header { padding: 14px 20px; }
-            .logo img { height: 56px; }
-            .header-tag { font-size: 8px; }
+            header {
+                padding: 14px 20px;
+            }
 
-            .hero { padding: 24px 20px 40px; }
+            .logo img {
+                height: 56px;
+            }
 
-            .hero-trade { max-width: 100%; padding: 0 4px; }
+            .header-tag {
+                font-size: 8px;
+            }
 
-            .hero-trade-input { font-size: 11px; padding: 12px 14px; }
+            .hero {
+                padding: 24px 20px 40px;
+            }
 
-            .hero-trade-btn { padding: 12px 16px; font-size: 8px; }
+            .hero-trade {
+                max-width: 100%;
+                padding: 0 4px;
+            }
 
-            .catalogue { padding: 0 12px 80px; }
+            .hero-trade-input {
+                font-size: 11px;
+                padding: 12px 14px;
+            }
+
+            .hero-trade-btn {
+                padding: 12px 16px;
+                font-size: 8px;
+            }
+
+            .catalogue {
+                padding: 0 12px 80px;
+            }
 
             .stone-grid {
                 grid-template-columns: 1fr 1fr !important;
@@ -992,13 +1169,40 @@
                 padding: 0 8px !important;
             }
 
-            .stone-card-overlay { padding: 10px; justify-content: space-between; }
-            .card-grade { font-size: 7px; padding: 2px 8px; margin-bottom: auto; align-self: flex-start; }
-            .card-name { font-size: 13px; margin-bottom: 2px; }
-            .card-meta { font-size: 8px; margin-bottom: 8px; letter-spacing: 1px; }
-            .card-btn { font-size: 8px; padding: 7px 10px; letter-spacing: 1px; white-space: nowrap; }
+            .stone-card-overlay {
+                padding: 10px;
+                justify-content: space-between;
+            }
 
-            .modal-overlay { align-items: flex-end; padding: 0; }
+            .card-grade {
+                font-size: 7px;
+                padding: 2px 8px;
+                margin-bottom: auto;
+                align-self: flex-start;
+            }
+
+            .card-name {
+                font-size: 13px;
+                margin-bottom: 2px;
+            }
+
+            .card-meta {
+                font-size: 8px;
+                margin-bottom: 8px;
+                letter-spacing: 1px;
+            }
+
+            .card-btn {
+                font-size: 8px;
+                padding: 7px 10px;
+                letter-spacing: 1px;
+                white-space: nowrap;
+            }
+
+            .modal-overlay {
+                align-items: flex-end;
+                padding: 0;
+            }
 
             .modal {
                 grid-template-columns: 1fr;
@@ -1012,8 +1216,13 @@
             }
 
             @keyframes slideUpMobile {
-                from { transform: translateY(100%); }
-                to { transform: translateY(0); }
+                from {
+                    transform: translateY(100%);
+                }
+
+                to {
+                    transform: translateY(0);
+                }
             }
 
             .modal-close {
@@ -1026,7 +1235,7 @@
                 padding: 0;
                 border-radius: 0;
                 border: none;
-                border-top: 2px solid rgba(159,134,107,0.3);
+                border-top: 2px solid rgba(159, 134, 107, 0.3);
                 background: #111;
                 font-size: 13px;
                 letter-spacing: 3px;
@@ -1034,345 +1243,392 @@
                 margin-top: 24px;
             }
 
-            .media-main { height: 260px; }
-            .modal-info { padding: 20px 20px 0; }
+            .media-main {
+                height: 260px;
+            }
 
-            .pricing-options { grid-template-columns: 1fr; }
+            .modal-info {
+                padding: 20px 20px 0;
+            }
 
-            .trade-overlay { align-items: flex-end; padding: 0; }
+            .pricing-options {
+                grid-template-columns: 1fr;
+            }
+
+            .trade-overlay {
+                align-items: flex-end;
+                padding: 0;
+            }
 
             .trade-modal {
                 max-height: 95vh;
                 border-radius: 20px 20px 0 0;
             }
 
-            .trade-modal-header { padding: 24px 20px 16px; }
-            .trade-modal-body { padding: 20px; }
-            .trade-grid { grid-template-columns: 1fr; }
+            .trade-modal-header {
+                padding: 24px 20px 16px;
+            }
 
-            footer { flex-direction: column; gap: 14px; text-align: center; }
-            .footer-info { text-align: center; }
-        }
+            .trade-modal-body {
+                padding: 20px;
+            }
 
-        ::-webkit-scrollbar { width: 3px; }
-        ::-webkit-scrollbar-track { background: var(--dark); }
-        ::-webkit-scrollbar-thumb { background: rgba(184,147,90,0.4); }
-    </style>
-</head>
-<body>
+            .trade-grid {
+                grid-template-columns: 1fr;
+            }
 
-<!-- HEADER -->
-<header id="siteHeader">
-    <div class="header-left">
-        <div class="logo">
-            <img src="assets/Ceyvora-logo.png" alt="Ceyvora & Co." onerror="this.style.display='none'">
-        </div>
-        <div class="header-tag">· Wholesale Only ·</div>
-    </div>
-</header>
+            footer {
+                flex-direction: column;
+                gap: 14px;
+                text-align: center;
+            }
 
-<!-- HERO -->
-
-<section class="hero" id="hero">
-
-
-
-    <h1>Trade<br><span>Catalogue</span></h1>
-
-    <p class="hero-sub">Direct from Sri Lanka's Ratnapura Region · Ceylon & Madagascar Origin · Certified</p>
-
-    <div class="hero-trade">
-
-        <br>
-
-        <div class="hero-trade-label">Approved Trade Buyers Enter Your Access Code</div>
-
-        <div class="hero-trade-row">
-
-            <input class="hero-trade-input" type="password" id="headerCodeInput" placeholder="Enter your trade code">
-
-            <button class="hero-trade-btn" onclick="applyHeaderCode()">Unlock Pricing</button>
-
-        </div>
-
-        <div class="hero-trade-status" id="headerTradeStatus"></div>
-
-        <div class="hero-trade-apply">Don't have a code? <button onclick="openTradeModal()" class="hero-apply-link">Apply for trade access</button></div>
-
-    </div>
-
-</section>
-
-<!-- CATALOGUE -->
-<section class="catalogue">
-    <div class="section-header">
-        <div class="section-title">Current Stock</div>
-        <div class="section-line"></div>
-    </div>
-    <div class="stone-grid" id="stoneGrid">
-        <div class="loading">Loading catalogue...</div>
-    </div>
-</section>
-
-<footer>
-    <div class="footer-logo">Ceyvora & Co.</div>
-    <div class="footer-info">
-        <a href="mailto:info@ceyvora.com.au">info@ceyvora.com.au</a><br>
-        <a href="tel:0458486576">0458 486 576</a><br>
-        <a href="https://www.ceyvora.com.au" target="_blank">www.ceyvora.com.au</a>
-    </div>
-</footer>
-
-<!-- STONE MODAL -->
-<div class="modal-overlay" id="modalOverlay">
-    <div class="modal">
-        <button class="modal-close" onclick="closeModal()">✕ &nbsp;Close</button>
-
-        <div class="modal-media">
-            <div class="media-main" id="mediaMain"></div>
-            <div class="media-thumbs" id="mediaThumbs"></div>
-        </div>
-
-        <div class="modal-info">
-            <div class="modal-grade" id="modalGrade"></div>
-            <div class="modal-name" id="modalName"></div>
-            <div class="modal-origin-line" id="modalOrigin"></div>
-            <div class="divider"></div>
-            <div class="specs-grid" id="modalSpecs"></div>
-            <div class="divider"></div>
-
-            <div class="pricing-box">
-                <div class="pricing-locked" id="pricingLocked">
-                    <div class="pricing-locked-title">Trade Pricing</div>
-                    <div class="pricing-locked-sub">Wholesale pricing is available to<br>approved trade buyers only.</div>
-                    <div class="pricing-options">
-                        <button class="pricing-opt-btn primary" onclick="showCodePanel()">I Have a Trade Code</button>
-                        <button class="pricing-opt-btn secondary" onclick="openTradeModal()">Apply for Trade Access</button>
-                    </div>
-                    <div class="code-panel" id="codePanel">
-                        <input type="password" id="codePanelInput" placeholder="ENTER TRADE CODE" onkeydown="if(event.key==='Enter')checkModalCode()">
-                        <button onclick="checkModalCode()">Unlock Pricing</button>
-                        <div class="code-error" id="codeError">Incorrect code. Please try again.</div>
-                    </div>
-                </div>
-                <div class="pricing-unlocked" id="pricingUnlocked">
-                    <div class="spec-label" style="margin-bottom:8px;">Wholesale Trade Price</div>
-                    <div class="price-amount" id="priceAmount"></div>
-                    <div class="price-sub">or make us an offer</div>
-                </div>
-            </div>
-
-            <button class="enquire-btn" onclick="toggleEnquiry()">Enquire / Make an Offer</button>
-            <div class="enquiry-form" id="enquiryForm">
-                <input type="text" id="eqBusiness" placeholder="Business Name *" required>
-                <input type="email" id="eqEmail" placeholder="Email Address *" required>
-                <input type="tel" id="eqPhone" placeholder="Phone Number (optional)">
-                <textarea id="eqMessage" placeholder="Your enquiry or offer..." style="height:80px;"></textarea>
-                <button class="enquiry-submit" onclick="submitEnquiry()">Send Enquiry</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- TRADE REGISTRATION MODAL -->
-<div class="trade-overlay" id="tradeOverlay">
-    <div class="trade-modal">
-        <div class="trade-modal-header">
-            <h2>Trade Account Application</h2>
-            <p>Complete the form below to apply for wholesale trade access.<br>Applications are reviewed within 48 hours. You will receive your unique access code via email once approved.</p>
-        </div>
-        <div class="trade-modal-body">
-
-            <div class="trade-section-title">Primary Contact</div>
-            <div class="trade-grid">
-                <div class="trade-field">
-                    <label>First Name *</label>
-                    <input type="text" id="tFirstName" placeholder="First name">
-                </div>
-                <div class="trade-field">
-                    <label>Last Name *</label>
-                    <input type="text" id="tLastName" placeholder="Last name">
-                </div>
-                <div class="trade-field">
-                    <label>Email *</label>
-                    <input type="email" id="tEmail" placeholder="Email address">
-                </div>
-                <div class="trade-field">
-                    <label>Role *</label>
-                    <input type="text" id="tRole" placeholder="e.g. Owner, Buyer, Designer">
-                </div>
-            </div>
-
-            <div class="trade-section-title">Business Details</div>
-            <div class="trade-grid">
-                <div class="trade-field">
-                    <label>Company Name *</label>
-                    <input type="text" id="tCompany" placeholder="Trading name">
-                </div>
-                <div class="trade-field">
-                    <label>Website *</label>
-                    <input type="text" id="tWebsite" placeholder="www.yourbusiness.com">
-                </div>
-                <div class="trade-field">
-                    <label>Phone *</label>
-                    <input type="tel" id="tPhone" placeholder="Business phone">
-                </div>
-                <div class="trade-field">
-                    <label>ABN / Business Registration No. *</label>
-                    <input type="text" id="tAbn" placeholder="ABN or registration number">
-                </div>
-            </div>
-
-            <div class="trade-section-title">Business Address</div>
-            <div class="trade-grid full">
-                <div class="trade-field">
-                    <label>Address Line 1 *</label>
-                    <input type="text" id="tAddr1" placeholder="Street address">
-                </div>
-                <div class="trade-field">
-                    <label>Address Line 2</label>
-                    <input type="text" id="tAddr2" placeholder="Suite, unit, building (optional)">
-                </div>
-            </div>
-            <div class="trade-grid">
-                <div class="trade-field">
-                    <label>City *</label>
-                    <input type="text" id="tCity" placeholder="City">
-                </div>
-                <div class="trade-field">
-                    <label>Postal Code *</label>
-                    <input type="text" id="tPostal" placeholder="Postal code">
-                </div>
-                <div class="trade-field">
-                    <label>Country *</label>
-                    <select id="tCountry">
-                        <option value="">Select country</option>
-                    </select>
-                </div>
-                <div class="trade-field">
-                    <label>State / Province *</label>
-                    <input type="text" id="tState" placeholder="State or province">
-                </div>
-            </div>
-
-            <div class="trade-section-title">Additional Information</div>
-            <div class="trade-grid full">
-                <div class="trade-field">
-                    <label>Tell us about your business</label>
-                    <textarea id="tMore" placeholder="Brief description of your business and how you plan to use our gemstones..."></textarea>
-                </div>
-            </div>
-
-            <div class="trade-notice">
-                <p>By submitting this application you confirm that you are a registered business.<br>
-                <strong>Applications are reviewed within 48 hours.</strong><br>
-                Your unique trade access code will be emailed to you upon approval.</p>
-            </div>
-
-            <div id="tradeFormError" style="display:none;background:rgba(204,68,68,0.1);border:1px solid rgba(204,68,68,0.3);padding:14px;margin-bottom:12px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:1px;color:#cc4444;line-height:1.8;text-align:center;"></div>
-            <div id="tradeFormSuccess" style="display:none;background:rgba(76,175,80,0.1);border:1px solid rgba(76,175,80,0.3);padding:20px;margin-bottom:12px;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:1px;color:#4CAF50;line-height:2;text-align:center;">
-                <div style="font-size:28px;margin-bottom:8px;">✓</div>
-                <strong>Application Submitted Successfully</strong><br>
-                We will review your application within 48 hours.<br>
-                Your unique trade access code will be emailed to you upon approval.
-            </div>
-            <button class="trade-submit" id="tradeSubmitBtn" onclick="submitTradeApplication()">Submit Trade Application</button>
-            <button class="trade-cancel" onclick="closeTradeModal()">Cancel</button>
-        </div>
-    </div>
-</div>
-
-<script>
-    const PASSWORD = 'CeyvoraWS2026';
-    let validCodes = [];
-    let unlocked = false;
-    let currentStone = null;
-
-    // ── Init ──
-    async function init() {
-        await Promise.all([loadCodes(), loadCountries(), loadStones()]);
-        initHeader();
-    }
-
-    async function loadCodes() {
-        try {
-            const res = await fetch('codes.json');
-            const data = await res.json();
-            validCodes = data.codes || [];
-        } catch(e) { validCodes = [PASSWORD]; }
-    }
-
-    async function loadCountries() {
-        try {
-            const res = await fetch('countries.json');
-            const countries = await res.json();
-            const sel = document.getElementById('tCountry');
-            countries.forEach(c => {
-                const opt = document.createElement('option');
-                opt.value = c; opt.textContent = c;
-                sel.appendChild(opt);
-            });
-        } catch(e) {}
-    }
-
-    async function loadStones() {
-        try {
-            const res = await fetch('stones.json');
-            const stones = await res.json();
-            buildGrid(stones);
-            window._stones = stones;
-        } catch(e) {
-            document.getElementById('stoneGrid').innerHTML = '<div class="loading">Unable to load catalogue. Please refresh.</div>';
-        }
-    }
-
-    // ── Header dynamic offset ──
-    function initHeader() {
-        const header = document.getElementById('siteHeader');
-        const hero = document.getElementById('hero');
-
-        function applyHeader() {
-            if (window.innerWidth >= 769) {
-                header.classList.add('is-fixed');
-                hero.style.paddingTop = (header.offsetHeight + 40) + 'px';
-            } else {
-                header.classList.remove('is-fixed');
-                hero.style.paddingTop = '';
+            .footer-info {
+                text-align: center;
             }
         }
 
-        applyHeader();
-        window.addEventListener('resize', applyHeader);
-    }
-
-    // ── Header code unlock ──
-    function isValidCode(code) {
-        return validCodes.includes(code.trim());
-    }
-
-    function applyHeaderCode() {
-        const val = document.getElementById('headerCodeInput').value;
-        const status = document.getElementById('headerTradeStatus');
-        if (isValidCode(val)) {
-            unlocked = true;
-            status.textContent = '✓ Trade pricing unlocked';
-            status.className = 'header-trade-status status-unlocked';
-            document.getElementById('headerCodeInput').value = '';
-            updatePricing();
-        } else {
-            status.textContent = 'Invalid code. Please try again.';
-            status.className = 'header-trade-status status-error';
+        ::-webkit-scrollbar {
+            width: 3px;
         }
-    }
 
-    // ── Grid ──
-    function buildGrid(stones) {
-        const grid = document.getElementById('stoneGrid');
-        if (!stones.length) {
-            grid.innerHTML = '<div class="loading">No stones currently available.</div>';
-            return;
+        ::-webkit-scrollbar-track {
+            background: var(--dark);
         }
-        grid.innerHTML = stones.map(s => `
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(184, 147, 90, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header id="siteHeader">
+        <div class="header-left">
+            <div class="logo">
+                <img src="assets/Ceyvora-logo.png" alt="Ceyvora & Co." onerror="this.style.display='none'">
+            </div>
+            <div class="header-tag">· Wholesale Only ·</div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero" id="hero">
+
+
+
+        <h1>Trade<br><span>Catalogue</span></h1>
+
+        <p class="hero-sub">Direct from Sri Lanka's Ratnapura Region · Ceylon & Madagascar Origin · Certified</p>
+
+        <div class="hero-trade">
+
+            <br>
+
+            <div class="hero-trade-label">Approved Trade Buyers Enter Your Access Code</div>
+
+            <div class="hero-trade-row">
+
+                <input class="hero-trade-input" type="password" id="headerCodeInput"
+                    placeholder="Enter your trade code">
+
+                <button class="hero-trade-btn" onclick="applyHeaderCode()">Unlock Pricing</button>
+
+            </div>
+
+            <div class="hero-trade-status" id="headerTradeStatus"></div>
+
+            <div class="hero-trade-apply">Don't have a code? <button onclick="openTradeModal()"
+                    class="hero-apply-link">Apply for trade access</button></div>
+
+        </div>
+
+    </section>
+
+    <!-- CATALOGUE -->
+    <section class="catalogue">
+        <div class="section-header">
+            <div class="section-title">Current Stock</div>
+            <div class="section-line"></div>
+        </div>
+        <div class="stone-grid" id="stoneGrid">
+            <div class="loading">Loading catalogue...</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">Ceyvora & Co.</div>
+        <div class="footer-info">
+            <a href="mailto:info@ceyvora.com.au">info@ceyvora.com.au</a><br>
+            <a href="tel:0458486576">0458 486 576</a><br>
+            <a href="https://www.ceyvora.com.au" target="_blank">www.ceyvora.com.au</a>
+        </div>
+    </footer>
+
+    <!-- STONE MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">✕ &nbsp;Close</button>
+
+            <div class="modal-media">
+                <div class="media-main" id="mediaMain"></div>
+                <div class="media-thumbs" id="mediaThumbs"></div>
+            </div>
+
+            <div class="modal-info">
+                <div class="modal-grade" id="modalGrade"></div>
+                <div class="modal-name" id="modalName"></div>
+                <div class="modal-origin-line" id="modalOrigin"></div>
+                <div class="divider"></div>
+                <div class="specs-grid" id="modalSpecs"></div>
+                <div class="divider"></div>
+
+                <div class="pricing-box">
+                    <div class="pricing-locked" id="pricingLocked">
+                        <div class="pricing-locked-title">Trade Pricing</div>
+                        <div class="pricing-locked-sub">Wholesale pricing is available to<br>approved trade buyers only.
+                        </div>
+                        <div class="pricing-options">
+                            <button class="pricing-opt-btn primary" onclick="showCodePanel()">I Have a Trade
+                                Code</button>
+                            <button class="pricing-opt-btn secondary" onclick="openTradeModal()">Apply for Trade
+                                Access</button>
+                        </div>
+                        <div class="code-panel" id="codePanel">
+                            <input type="password" id="codePanelInput" placeholder="ENTER TRADE CODE"
+                                onkeydown="if(event.key==='Enter')checkModalCode()">
+                            <button onclick="checkModalCode()">Unlock Pricing</button>
+                            <div class="code-error" id="codeError">Incorrect code. Please try again.</div>
+                        </div>
+                    </div>
+                    <div class="pricing-unlocked" id="pricingUnlocked">
+                        <div class="spec-label" style="margin-bottom:8px;">Wholesale Trade Price</div>
+                        <div class="price-amount" id="priceAmount"></div>
+                        <div class="price-sub">or make us an offer</div>
+                    </div>
+                </div>
+
+                <button class="enquire-btn" onclick="toggleEnquiry()">Enquire / Make an Offer</button>
+                <div class="enquiry-form" id="enquiryForm">
+                    <input type="text" id="eqBusiness" placeholder="Business Name *" required>
+                    <input type="email" id="eqEmail" placeholder="Email Address *" required>
+                    <input type="tel" id="eqPhone" placeholder="Phone Number (optional)">
+                    <textarea id="eqMessage" placeholder="Your enquiry or offer..." style="height:80px;"></textarea>
+                    <button class="enquiry-submit" onclick="submitEnquiry()">Send Enquiry</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRADE REGISTRATION MODAL -->
+    <div class="trade-overlay" id="tradeOverlay">
+        <div class="trade-modal">
+            <div class="trade-modal-header">
+                <h2>Trade Account Application</h2>
+                <p>Complete the form below to apply for wholesale trade access.<br>Applications are reviewed within 48
+                    hours. You will receive your unique access code via email once approved.</p>
+            </div>
+            <div class="trade-modal-body">
+
+                <div class="trade-section-title">Primary Contact</div>
+                <div class="trade-grid">
+                    <div class="trade-field">
+                        <label>First Name *</label>
+                        <input type="text" id="tFirstName" placeholder="First name">
+                    </div>
+                    <div class="trade-field">
+                        <label>Last Name *</label>
+                        <input type="text" id="tLastName" placeholder="Last name">
+                    </div>
+                    <div class="trade-field">
+                        <label>Email *</label>
+                        <input type="email" id="tEmail" placeholder="Email address">
+                    </div>
+                    <div class="trade-field">
+                        <label>Role *</label>
+                        <input type="text" id="tRole" placeholder="e.g. Owner, Buyer, Designer">
+                    </div>
+                </div>
+
+                <div class="trade-section-title">Business Details</div>
+                <div class="trade-grid">
+                    <div class="trade-field">
+                        <label>Company Name *</label>
+                        <input type="text" id="tCompany" placeholder="Trading name">
+                    </div>
+                    <div class="trade-field">
+                        <label>Website *</label>
+                        <input type="text" id="tWebsite" placeholder="www.yourbusiness.com">
+                    </div>
+                    <div class="trade-field">
+                        <label>Phone *</label>
+                        <input type="tel" id="tPhone" placeholder="Business phone">
+                    </div>
+                    <div class="trade-field">
+                        <label>ABN / Business Registration No. *</label>
+                        <input type="text" id="tAbn" placeholder="ABN or registration number">
+                    </div>
+                </div>
+
+                <div class="trade-section-title">Business Address</div>
+                <div class="trade-grid full">
+                    <div class="trade-field">
+                        <label>Address Line 1 *</label>
+                        <input type="text" id="tAddr1" placeholder="Street address">
+                    </div>
+                    <div class="trade-field">
+                        <label>Address Line 2</label>
+                        <input type="text" id="tAddr2" placeholder="Suite, unit, building (optional)">
+                    </div>
+                </div>
+                <div class="trade-grid">
+                    <div class="trade-field">
+                        <label>City *</label>
+                        <input type="text" id="tCity" placeholder="City">
+                    </div>
+                    <div class="trade-field">
+                        <label>Postal Code *</label>
+                        <input type="text" id="tPostal" placeholder="Postal code">
+                    </div>
+                    <div class="trade-field">
+                        <label>Country *</label>
+                        <select id="tCountry">
+                            <option value="">Select country</option>
+                        </select>
+                    </div>
+                    <div class="trade-field">
+                        <label>State / Province *</label>
+                        <input type="text" id="tState" placeholder="State or province">
+                    </div>
+                </div>
+
+                <div class="trade-section-title">Additional Information</div>
+                <div class="trade-grid full">
+                    <div class="trade-field">
+                        <label>Tell us about your business</label>
+                        <textarea id="tMore"
+                            placeholder="Brief description of your business and how you plan to use our gemstones..."></textarea>
+                    </div>
+                </div>
+
+                <div class="trade-notice">
+                    <p>By submitting this application you confirm that you are a registered business.<br>
+                        <strong>Applications are reviewed within 48 hours.</strong><br>
+                        Your unique trade access code will be emailed to you upon approval.
+                    </p>
+                </div>
+
+                <div id="tradeFormError"
+                    style="display:none;background:rgba(204,68,68,0.1);border:1px solid rgba(204,68,68,0.3);padding:14px;margin-bottom:12px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:1px;color:#cc4444;line-height:1.8;text-align:center;">
+                </div>
+                <div id="tradeFormSuccess"
+                    style="display:none;background:rgba(76,175,80,0.1);border:1px solid rgba(76,175,80,0.3);padding:20px;margin-bottom:12px;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:1px;color:#4CAF50;line-height:2;text-align:center;">
+                    <div style="font-size:28px;margin-bottom:8px;">✓</div>
+                    <strong>Application Submitted Successfully</strong><br>
+                    We will review your application within 48 hours.<br>
+                    Your unique trade access code will be emailed to you upon approval.
+                </div>
+                <button class="trade-submit" id="tradeSubmitBtn" onclick="submitTradeApplication()">Submit Trade
+                    Application</button>
+                <button class="trade-cancel" onclick="closeTradeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const PASSWORD = 'CeyvoraWS2026';
+        let validCodes = [];
+        let unlocked = false;
+        let currentStone = null;
+
+        // ── Init ──
+        async function init() {
+            await Promise.all([loadCodes(), loadCountries(), loadStones()]);
+            initHeader();
+        }
+
+        async function loadCodes() {
+            try {
+                const res = await fetch('codes.json');
+                const data = await res.json();
+                validCodes = data.codes || [];
+            } catch (e) { validCodes = [PASSWORD]; }
+        }
+
+        async function loadCountries() {
+            try {
+                const res = await fetch('countries.json');
+                const countries = await res.json();
+                const sel = document.getElementById('tCountry');
+                countries.forEach(c => {
+                    const opt = document.createElement('option');
+                    opt.value = c; opt.textContent = c;
+                    sel.appendChild(opt);
+                });
+            } catch (e) { }
+        }
+
+        async function loadStones() {
+            try {
+                const res = await fetch('stones.json');
+                const stones = await res.json();
+                buildGrid(stones);
+                window._stones = stones;
+            } catch (e) {
+                document.getElementById('stoneGrid').innerHTML = '<div class="loading">Unable to load catalogue. Please refresh.</div>';
+            }
+        }
+
+        // ── Header dynamic offset ──
+        function initHeader() {
+            const header = document.getElementById('siteHeader');
+            const hero = document.getElementById('hero');
+
+            function applyHeader() {
+                if (window.innerWidth >= 769) {
+                    header.classList.add('is-fixed');
+                    hero.style.paddingTop = (header.offsetHeight + 40) + 'px';
+                } else {
+                    header.classList.remove('is-fixed');
+                    hero.style.paddingTop = '';
+                }
+            }
+
+            applyHeader();
+            window.addEventListener('resize', applyHeader);
+        }
+
+        // ── Header code unlock ──
+        function isValidCode(code) {
+            return validCodes.includes(code.trim());
+        }
+
+        function applyHeaderCode() {
+            const val = document.getElementById('headerCodeInput').value;
+            const status = document.getElementById('headerTradeStatus');
+            if (isValidCode(val)) {
+                unlocked = true;
+                status.textContent = '✓ Trade pricing unlocked';
+                status.className = 'header-trade-status status-unlocked';
+                document.getElementById('headerCodeInput').value = '';
+                updatePricing();
+            } else {
+                status.textContent = 'Invalid code. Please try again.';
+                status.className = 'header-trade-status status-error';
+            }
+        }
+
+        // ── Grid ──
+        function buildGrid(stones) {
+            const grid = document.getElementById('stoneGrid');
+            if (!stones.length) {
+                grid.innerHTML = '<div class="loading">No stones currently available.</div>';
+                return;
+            }
+            grid.innerHTML = stones.map(s => `
             <div class="stone-card" onclick="openModal(${s.id})">
                 <div class="stone-card-media">
                     <img src="${s.thumbImage}" alt="${s.name}" loading="lazy">
@@ -1387,68 +1643,68 @@
                 </div>
             </div>
         `).join('');
-    }
+        }
 
-    // ── Modal ──
-    function openModal(id) {
-        currentStone = window._stones.find(s => s.id === id);
-        if (!currentStone) return;
+        // ── Modal ──
+        function openModal(id) {
+            currentStone = window._stones.find(s => s.id === id);
+            if (!currentStone) return;
 
-        document.getElementById('modalGrade').textContent = currentStone.grade;
-        document.getElementById('modalName').textContent = currentStone.name;
-        document.getElementById('modalOrigin').textContent = `${currentStone.colour} · ${currentStone.origin} Origin`;
+            document.getElementById('modalGrade').textContent = currentStone.grade;
+            document.getElementById('modalName').textContent = currentStone.name;
+            document.getElementById('modalOrigin').textContent = `${currentStone.colour} · ${currentStone.origin} Origin`;
 
-        document.getElementById('modalSpecs').innerHTML = [
-            ['Carat Weight', currentStone.carats],
-            ['Dimensions', currentStone.dimensions],
-            ['Treatment', currentStone.treatment],
-            ['Certification', currentStone.certification],
-            ['Colour', currentStone.colour],
-            ['Origin', currentStone.origin],
-        ].map(([l,v]) => `<div><div class="spec-label">${l}</div><div class="spec-value">${v}</div></div>`).join('');
+            document.getElementById('modalSpecs').innerHTML = [
+                ['Carat Weight', currentStone.carats],
+                ['Dimensions', currentStone.dimensions],
+                ['Treatment', currentStone.treatment],
+                ['Certification', currentStone.certification],
+                ['Colour', currentStone.colour],
+                ['Origin', currentStone.origin],
+            ].map(([l, v]) => `<div><div class="spec-label">${l}</div><div class="spec-value">${v}</div></div>`).join('');
 
-        buildMedia();
-        updatePricing();
+            buildMedia();
+            updatePricing();
 
-        document.getElementById('enquiryForm').classList.remove('active');
-        document.getElementById('codePanel').classList.remove('active');
-        document.getElementById('codeError').style.display = 'none';
-        document.getElementById('codePanelInput').value = '';
+            document.getElementById('enquiryForm').classList.remove('active');
+            document.getElementById('codePanel').classList.remove('active');
+            document.getElementById('codeError').style.display = 'none';
+            document.getElementById('codePanelInput').value = '';
 
-        document.getElementById('modalOverlay').classList.add('active');
-        document.body.style.overflow = 'hidden';
-        document.body.style.position = 'fixed';
-        document.body.style.width = '100%';
-    }
+            document.getElementById('modalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+        }
 
-    function closeModal() {
-        document.getElementById('modalOverlay').classList.remove('active');
-        document.body.style.overflow = '';
-        document.body.style.position = '';
-        document.body.style.width = '';
-    }
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+        }
 
-    document.getElementById('modalOverlay').addEventListener('click', e => {
-        if (e.target === document.getElementById('modalOverlay')) closeModal();
-    });
+        document.getElementById('modalOverlay').addEventListener('click', e => {
+            if (e.target === document.getElementById('modalOverlay')) closeModal();
+        });
 
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeTradeModal(); } });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeTradeModal(); } });
 
-    // ── Media ──
-    function buildMedia() {
-        setMedia(0);
-        const thumbs = document.getElementById('mediaThumbs');
-        thumbs.innerHTML = currentStone.media.map((m,i) => {
-            if (m.type === 'video') return `<div class="media-thumb-video ${i===0?'active':''}" onclick="setMedia(${i})">▶</div>`;
-            return `<img class="media-thumb ${i===0?'active':''}" src="${m.src}" onclick="setMedia(${i})" alt="View ${i+1}">`;
-        }).join('');
-    }
+        // ── Media ──
+        function buildMedia() {
+            setMedia(0);
+            const thumbs = document.getElementById('mediaThumbs');
+            thumbs.innerHTML = currentStone.media.map((m, i) => {
+                if (m.type === 'video') return `<div class="media-thumb-video ${i === 0 ? 'active' : ''}" onclick="setMedia(${i})">▶</div>`;
+                return `<img class="media-thumb ${i === 0 ? 'active' : ''}" src="${m.src}" onclick="setMedia(${i})" alt="View ${i + 1}">`;
+            }).join('');
+        }
 
-    function setMedia(i) {
-        const m = currentStone.media[i];
-        const main = document.getElementById('mediaMain');
-        if (m.type === 'video') {
-            main.innerHTML = `
+        function setMedia(i) {
+            const m = currentStone.media[i];
+            const main = document.getElementById('mediaMain');
+            if (m.type === 'video') {
+                main.innerHTML = `
                 <div style="position:relative;width:100%;height:100%;background:#111;">
                     <iframe src="${m.src}" style="width:100%;height:100%;border:none;display:block;" allow="autoplay" allowfullscreen></iframe>
                     <div onclick="this.style.display='none';"
@@ -1456,217 +1712,211 @@
                         <div style="width:60px;height:60px;background:rgba(184,147,90,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;color:#0a0a0a;">▶</div>
                     </div>
                 </div>`;
-        } else {
-            main.innerHTML = `<img src="${m.src}" alt="Stone" style="width:100%;height:100%;object-fit:cover;display:block;">`;
-        }
-        document.querySelectorAll('.media-thumb, .media-thumb-video').forEach((t,idx) => {
-            t.classList.toggle('active', idx === i);
-        });
-    }
-
-    // ── Pricing ──
-    function updatePricing() {
-        const locked = document.getElementById('pricingLocked');
-        const uEl = document.getElementById('pricingUnlocked');
-        if (unlocked && currentStone) {
-            locked.classList.add('hidden');
-            uEl.classList.add('active');
-            document.getElementById('priceAmount').textContent = currentStone.price;
-        } else {
-            locked.classList.remove('hidden');
-            uEl.classList.remove('active');
-        }
-    }
-
-    function showCodePanel() {
-        const panel = document.getElementById('codePanel');
-        panel.classList.add('active');
-        setTimeout(() => document.getElementById('codePanelInput').focus(), 100);
-    }
-
-    function checkModalCode() {
-        const val = document.getElementById('codePanelInput').value;
-        if (isValidCode(val)) {
-            unlocked = true;
-            document.getElementById('codeError').style.display = 'none';
-            // Also update header status
-            document.getElementById('headerTradeStatus').textContent = '✓ Trade pricing unlocked';
-            document.getElementById('headerTradeStatus').className = 'header-trade-status status-unlocked';
-            updatePricing();
-        } else {
-            document.getElementById('codeError').style.display = 'block';
-        }
-    }
-
-    // ── Enquiry ──
-    function toggleEnquiry() {
-        document.getElementById('enquiryForm').classList.toggle('active');
-    }
-
-    function submitEnquiry() {
-        const business = document.getElementById('eqBusiness').value;
-        const email = document.getElementById('eqEmail').value;
-        const phone = document.getElementById('eqPhone').value;
-        const message = document.getElementById('eqMessage').value;
-
-        if (!business || !email) {
-            alert('Please enter your business name and email address.');
-            return;
-        }
-
-        const stone = currentStone ? `${currentStone.name} ${currentStone.carats} · ${currentStone.origin}` : '';
-        const btn = document.querySelector('.enquiry-submit');
-        btn.textContent = 'Sending...';
-        btn.disabled = true;
-
-        emailjs.send('service_v7kiteu', 'template_rwk7wga', {
-            stone, business, email,
-            phone: phone || 'Not provided',
-            message: message || 'No message'
-        }).then(() => {
-            btn.textContent = 'Enquiry Sent ✓';
-            btn.style.color = '#4A9ECC';
-            setTimeout(() => { closeModal(); window.scrollTo({ top: 0, behavior: 'smooth' }); }, 1500);
-        }).catch(() => {
-            btn.textContent = 'Send Failed — Try Again';
-            btn.disabled = false;
-        });
-    }
-
-    // ── Trade Registration ──
-    function openTradeModal() {
-        document.getElementById('tradeOverlay').classList.add('active');
-    }
-
-    function closeTradeModal() {
-        document.getElementById('tradeOverlay').classList.remove('active');
-    }
-
-    document.getElementById('tradeOverlay').addEventListener('click', e => {
-        if (e.target === document.getElementById('tradeOverlay')) closeTradeModal();
-    });
-
-    function showTradeError(msg) {
-        const el = document.getElementById('tradeFormError');
-        el.innerHTML = msg;
-        el.style.display = 'block';
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-
-    function hideTradeMessages() {
-        document.getElementById('tradeFormError').style.display = 'none';
-        document.getElementById('tradeFormSuccess').style.display = 'none';
-    }
-
-    function highlightField(id) {
-        const el = document.getElementById(id);
-        if (el) {
-            el.style.borderColor = '#cc4444';
-            el.addEventListener('input', function() {
-                el.style.borderColor = '';
-            }, { once: true });
-        }
-    }
-
-    function submitTradeApplication() {
-        hideTradeMessages();
-
-        const fields = {
-            tFirstName: 'First Name',
-            tLastName: 'Last Name',
-            tEmail: 'Email',
-            tRole: 'Role',
-            tCompany: 'Company Name',
-            tPhone: 'Phone',
-            tAbn: 'ABN / Business Registration No.',
-            tAddr1: 'Address Line 1',
-            tCity: 'City',
-            tPostal: 'Postal Code',
-            tCountry: 'Country',
-            tState: 'State / Province'
-        };
-
-        const missing = [];
-        Object.entries(fields).forEach(([id, label]) => {
-            const val = document.getElementById(id).value.trim();
-            if (!val) {
-                missing.push(label);
-                highlightField(id);
+            } else {
+                main.innerHTML = `<img src="${m.src}" alt="Stone" style="width:100%;height:100%;object-fit:cover;display:block;">`;
             }
+            document.querySelectorAll('.media-thumb, .media-thumb-video').forEach((t, idx) => {
+                t.classList.toggle('active', idx === i);
+            });
+        }
+
+        // ── Pricing ──
+        function updatePricing() {
+            const locked = document.getElementById('pricingLocked');
+            const uEl = document.getElementById('pricingUnlocked');
+            if (unlocked && currentStone) {
+                locked.classList.add('hidden');
+                uEl.classList.add('active');
+                document.getElementById('priceAmount').textContent = currentStone.price;
+            } else {
+                locked.classList.remove('hidden');
+                uEl.classList.remove('active');
+            }
+        }
+
+        function showCodePanel() {
+            const panel = document.getElementById('codePanel');
+            panel.classList.add('active');
+            setTimeout(() => document.getElementById('codePanelInput').focus(), 100);
+        }
+
+        function checkModalCode() {
+            const val = document.getElementById('codePanelInput').value;
+            if (isValidCode(val)) {
+                unlocked = true;
+                document.getElementById('codeError').style.display = 'none';
+                // Also update header status
+                document.getElementById('headerTradeStatus').textContent = '✓ Trade pricing unlocked';
+                document.getElementById('headerTradeStatus').className = 'header-trade-status status-unlocked';
+                updatePricing();
+            } else {
+                document.getElementById('codeError').style.display = 'block';
+            }
+        }
+
+        // ── Enquiry ──
+        function toggleEnquiry() {
+            document.getElementById('enquiryForm').classList.toggle('active');
+        }
+
+        function submitEnquiry() {
+            const business = document.getElementById('eqBusiness').value;
+            const email = document.getElementById('eqEmail').value;
+            const phone = document.getElementById('eqPhone').value;
+            const message = document.getElementById('eqMessage').value;
+
+            if (!business || !email) {
+                alert('Please enter your business name and email address.');
+                return;
+            }
+
+            const stone = currentStone ? `${currentStone.name} ${currentStone.carats} · ${currentStone.origin}` : '';
+            const btn = document.querySelector('.enquiry-submit');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            emailjs.send('service_v7kiteu', 'template_rwk7wga', {
+                stone, business, email,
+                phone: phone || 'Not provided',
+                message: message || 'No message'
+            }).then(() => {
+                btn.textContent = 'Enquiry Sent ✓';
+                btn.style.color = '#4A9ECC';
+                setTimeout(() => { closeModal(); window.scrollTo({ top: 0, behavior: 'smooth' }); }, 1500);
+            }).catch(() => {
+                btn.textContent = 'Send Failed — Try Again';
+                btn.disabled = false;
+            });
+        }
+
+        // ── Trade Registration ──
+        function openTradeModal() {
+            document.getElementById('tradeOverlay').classList.add('active');
+        }
+
+        function closeTradeModal() {
+            document.getElementById('tradeOverlay').classList.remove('active');
+        }
+
+        document.getElementById('tradeOverlay').addEventListener('click', e => {
+            if (e.target === document.getElementById('tradeOverlay')) closeTradeModal();
         });
 
-        if (missing.length) {
-            showTradeError('Please complete the following required fields:<br><br>' + missing.map(f => '· ' + f).join('<br>'));
-            return;
+        function showTradeError(msg) {
+            const el = document.getElementById('tradeFormError');
+            el.innerHTML = msg;
+            el.style.display = 'block';
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
-        const email = document.getElementById('tEmail').value.trim();
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            highlightField('tEmail');
-            showTradeError('Please enter a valid email address.');
-            return;
+        function hideTradeMessages() {
+            document.getElementById('tradeFormError').style.display = 'none';
+            document.getElementById('tradeFormSuccess').style.display = 'none';
         }
 
-        const firstName = document.getElementById('tFirstName').value.trim();
-        const lastName = document.getElementById('tLastName').value.trim();
-        const role = document.getElementById('tRole').value.trim();
-        const company = document.getElementById('tCompany').value.trim();
-        const website = document.getElementById('tWebsite').value.trim();
-        const phone = document.getElementById('tPhone').value.trim();
-        const abn = document.getElementById('tAbn').value.trim();
-        const addr1 = document.getElementById('tAddr1').value.trim();
-        const addr2 = document.getElementById('tAddr2').value.trim();
-        const city = document.getElementById('tCity').value.trim();
-        const postal = document.getElementById('tPostal').value.trim();
-        const country = document.getElementById('tCountry').value.trim();
-        const state = document.getElementById('tState').value.trim();
-        const more = document.getElementById('tMore').value.trim();
+        function highlightField(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.style.borderColor = '#cc4444';
+                el.addEventListener('input', function () {
+                    el.style.borderColor = '';
+                }, { once: true });
+            }
+        }
 
-        const btn = document.getElementById('tradeSubmitBtn');
-        btn.textContent = 'Submitting...';
-        btn.disabled = true;
+        function submitTradeApplication() {
+            hideTradeMessages();
 
-        emailjs.send('service_v7kiteu', 'template_45vh57k', {
-            business: company,
-            email: email,
-            phone: phone,
-            firstName: firstName,
-            lastName: lastName,
-            role: role,
-            website: website || 'Not provided',
-            abn: abn,
-            address: `${addr1}${addr2 ? ', '+addr2 : ''}, ${city}, ${state} ${postal}, ${country}`,
-            more: more || 'Not provided'
-        }).then(() => {
-            btn.style.display = 'none';
-            document.getElementById('tradeFormSuccess').style.display = 'block';
-            document.getElementById('tradeFormSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
-            setTimeout(() => {
-                closeTradeModal();
-                btn.style.display = 'block';
+            const fields = {
+                tFirstName: 'First Name',
+                tLastName: 'Last Name',
+                tEmail: 'Email',
+                tRole: 'Role',
+                tCompany: 'Company Name',
+                tPhone: 'Phone',
+                tAbn: 'ABN / Business Registration No.',
+                tAddr1: 'Address Line 1',
+                tCity: 'City',
+                tPostal: 'Postal Code',
+                tCountry: 'Country',
+                tState: 'State / Province'
+            };
+
+            const missing = [];
+            Object.entries(fields).forEach(([id, label]) => {
+                const val = document.getElementById(id).value.trim();
+                if (!val) {
+                    missing.push(label);
+                    highlightField(id);
+                }
+            });
+
+            if (missing.length) {
+                showTradeError('Please complete the following required fields:<br><br>' + missing.map(f => '· ' + f).join('<br>'));
+                return;
+            }
+
+            const email = document.getElementById('tEmail').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                highlightField('tEmail');
+                showTradeError('Please enter a valid email address.');
+                return;
+            }
+
+            const firstName = document.getElementById('tFirstName').value.trim();
+            const lastName = document.getElementById('tLastName').value.trim();
+            const role = document.getElementById('tRole').value.trim();
+            const company = document.getElementById('tCompany').value.trim();
+            const website = document.getElementById('tWebsite').value.trim();
+            const phone = document.getElementById('tPhone').value.trim();
+            const abn = document.getElementById('tAbn').value.trim();
+            const addr1 = document.getElementById('tAddr1').value.trim();
+            const addr2 = document.getElementById('tAddr2').value.trim();
+            const city = document.getElementById('tCity').value.trim();
+            const postal = document.getElementById('tPostal').value.trim();
+            const country = document.getElementById('tCountry').value.trim();
+            const state = document.getElementById('tState').value.trim();
+            const more = document.getElementById('tMore').value.trim();
+
+            const btn = document.getElementById('tradeSubmitBtn');
+            btn.textContent = 'Submitting...';
+            btn.disabled = true;
+
+            emailjs.send('service_v7kiteu', 'template_45vh57k', {
+                business: company,
+                email: email,
+                phone: phone,
+                firstName: firstName,
+                lastName: lastName,
+                role: role,
+                website: website || 'Not provided',
+                abn: abn,
+                address: `${addr1}${addr2 ? ', ' + addr2 : ''}, ${city}, ${state} ${postal}, ${country}`,
+                more: more || 'Not provided'
+            }).then(() => {
+                btn.style.display = 'none';
+                document.getElementById('tradeFormSuccess').style.display = 'block';
+                document.getElementById('tradeFormSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }).catch((err) => {
+                console.error('EmailJS error:', err);
                 btn.textContent = 'Submit Trade Application';
                 btn.disabled = false;
-                resetTradeForm();
-            }, 4000);
-        }).catch((err) => {
-            console.error('EmailJS error:', err);
-            btn.textContent = 'Submit Trade Application';
-            btn.disabled = false;
-            showTradeError('Something went wrong. Please try again or contact us directly at info@ceyvora.com.au');
-        });
-    }
+                showTradeError('Something went wrong. Please try again or contact us directly at info@ceyvora.com.au');
+            });
+        }
 
-    function resetTradeForm() {
-        ['tFirstName','tLastName','tEmail','tRole','tCompany','tWebsite','tPhone','tAbn','tAddr1','tAddr2','tCity','tPostal','tState','tMore'].forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.value = '';
-        });
-        document.getElementById('tCountry').value = '';
-        hideTradeMessages();
-    }
+        function resetTradeForm() {
+            ['tFirstName', 'tLastName', 'tEmail', 'tRole', 'tCompany', 'tWebsite', 'tPhone', 'tAbn', 'tAddr1', 'tAddr2', 'tCity', 'tPostal', 'tState', 'tMore'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.value = '';
+            });
+            document.getElementById('tCountry').value = '';
+            hideTradeMessages();
+        }
 
-    init();
-</script>
+        init();
+    </script>
 </body>
+
 </html>
