@@ -221,7 +221,7 @@
 
         .hero-trade-label {
             font-family: 'Montserrat', sans-serif;
-            font-size: 8px;
+            font-size: 9px;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--grey);
@@ -1039,24 +1039,12 @@
 
             .pricing-options { grid-template-columns: 1fr; }
 
-  .trade-overlay {
-                align-items: flex-end;
-                padding: 0;
-                overflow: hidden;
-            }
+            .trade-overlay { align-items: flex-end; padding: 0; }
 
             .trade-modal {
                 max-height: 95vh;
-                width: 100%;
-                max-width: 100%;
                 border-radius: 20px 20px 0 0;
-                overflow-y: auto;
-                overflow-x: hidden;
-                -webkit-overflow-scrolling: touch;
             }
-
-            .trade-modal-header { padding: 28px 20px 16px; }
-            .trade-modal-body { padding: 20px 20px 40px; }
 
             .trade-modal-header { padding: 24px 20px 16px; }
             .trade-modal-body { padding: 20px; }
@@ -1084,20 +1072,35 @@
 </header>
 
 <!-- HERO -->
+
 <section class="hero" id="hero">
 
+
+
     <h1>Trade<br><span>Catalogue</span></h1>
+
     <p class="hero-sub">Direct from Sri Lanka's Ratnapura Region · Ceylon & Madagascar Origin · Certified</p>
+
     <div class="hero-trade">
+
         <br>
+
         <div class="hero-trade-label">Approved Trade Buyers Enter Your Access Code</div>
+
         <div class="hero-trade-row">
+
             <input class="hero-trade-input" type="password" id="headerCodeInput" placeholder="Enter your trade code">
+
             <button class="hero-trade-btn" onclick="applyHeaderCode()">Unlock Pricing</button>
+
         </div>
+
         <div class="hero-trade-status" id="headerTradeStatus"></div>
+
         <div class="hero-trade-apply">Don't have a code? <button onclick="openTradeModal()" class="hero-apply-link">Apply for trade access</button></div>
+
     </div>
+
 </section>
 
 <!-- CATALOGUE -->
@@ -1266,7 +1269,14 @@
                 Your unique trade access code will be emailed to you upon approval.</p>
             </div>
 
-            <button class="trade-submit" onclick="submitTradeApplication()">Submit Trade Application</button>
+            <div id="tradeFormError" style="display:none;background:rgba(204,68,68,0.1);border:1px solid rgba(204,68,68,0.3);padding:14px;margin-bottom:12px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:1px;color:#cc4444;line-height:1.8;text-align:center;"></div>
+            <div id="tradeFormSuccess" style="display:none;background:rgba(76,175,80,0.1);border:1px solid rgba(76,175,80,0.3);padding:20px;margin-bottom:12px;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:1px;color:#4CAF50;line-height:2;text-align:center;">
+                <div style="font-size:28px;margin-bottom:8px;">✓</div>
+                <strong>Application Submitted Successfully</strong><br>
+                We will review your application within 48 hours.<br>
+                Your unique trade access code will be emailed to you upon approval.
+            </div>
+            <button class="trade-submit" id="tradeSubmitBtn" onclick="submitTradeApplication()">Submit Trade Application</button>
             <button class="trade-cancel" onclick="closeTradeModal()">Cancel</button>
         </div>
     </div>
@@ -1405,12 +1415,10 @@
         document.getElementById('codeError').style.display = 'none';
         document.getElementById('codePanelInput').value = '';
 
-document.getElementById('modalOverlay').classList.add('active');
+        document.getElementById('modalOverlay').classList.add('active');
         document.body.style.overflow = 'hidden';
         document.body.style.position = 'fixed';
         document.body.style.width = '100%';
-        document.body.style.left = '0';
-        document.body.style.right = '0';
     }
 
     function closeModal() {
@@ -1526,74 +1534,136 @@ document.getElementById('modalOverlay').classList.add('active');
     }
 
     // ── Trade Registration ──
-function openTradeModal() {
+    function openTradeModal() {
         document.getElementById('tradeOverlay').classList.add('active');
-        document.body.style.overflow = 'hidden';
-        document.body.style.position = 'fixed';
-        document.body.style.width = '100%';
-        document.body.style.left = '0';
-        document.body.style.right = '0';
     }
 
-function closeTradeModal() {
+    function closeTradeModal() {
         document.getElementById('tradeOverlay').classList.remove('active');
-        document.body.style.overflow = '';
-        document.body.style.position = '';
-        document.body.style.width = '';
-        document.body.style.left = '';
-        document.body.style.right = '';
     }
 
     document.getElementById('tradeOverlay').addEventListener('click', e => {
         if (e.target === document.getElementById('tradeOverlay')) closeTradeModal();
     });
 
-    function submitTradeApplication() {
-        const firstName = document.getElementById('tFirstName').value;
-        const lastName = document.getElementById('tLastName').value;
-        const email = document.getElementById('tEmail').value;
-        const role = document.getElementById('tRole').value;
-        const company = document.getElementById('tCompany').value;
-        const website = document.getElementById('tWebsite').value;
-        const phone = document.getElementById('tPhone').value;
-        const abn = document.getElementById('tAbn').value;
-        const addr1 = document.getElementById('tAddr1').value;
-        const addr2 = document.getElementById('tAddr2').value;
-        const city = document.getElementById('tCity').value;
-        const postal = document.getElementById('tPostal').value;
-        const country = document.getElementById('tCountry').value;
-        const state = document.getElementById('tState').value;
-        const more = document.getElementById('tMore').value;
+    function showTradeError(msg) {
+        const el = document.getElementById('tradeFormError');
+        el.innerHTML = msg;
+        el.style.display = 'block';
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 
-        if (!firstName || !lastName || !email || !company || !phone || !abn || !addr1 || !city || !postal || !country) {
-            alert('Please fill in all required fields.');
+    function hideTradeMessages() {
+        document.getElementById('tradeFormError').style.display = 'none';
+        document.getElementById('tradeFormSuccess').style.display = 'none';
+    }
+
+    function highlightField(id) {
+        const el = document.getElementById(id);
+        if (el) {
+            el.style.borderColor = '#cc4444';
+            el.addEventListener('input', function() {
+                el.style.borderColor = '';
+            }, { once: true });
+        }
+    }
+
+    function submitTradeApplication() {
+        hideTradeMessages();
+
+        const fields = {
+            tFirstName: 'First Name',
+            tLastName: 'Last Name',
+            tEmail: 'Email',
+            tRole: 'Role',
+            tCompany: 'Company Name',
+            tPhone: 'Phone',
+            tAbn: 'ABN / Business Registration No.',
+            tAddr1: 'Address Line 1',
+            tCity: 'City',
+            tPostal: 'Postal Code',
+            tCountry: 'Country',
+            tState: 'State / Province'
+        };
+
+        const missing = [];
+        Object.entries(fields).forEach(([id, label]) => {
+            const val = document.getElementById(id).value.trim();
+            if (!val) {
+                missing.push(label);
+                highlightField(id);
+            }
+        });
+
+        if (missing.length) {
+            showTradeError('Please complete the following required fields:<br><br>' + missing.map(f => '· ' + f).join('<br>'));
             return;
         }
 
-        const btn = document.querySelector('.trade-submit');
+        const email = document.getElementById('tEmail').value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            highlightField('tEmail');
+            showTradeError('Please enter a valid email address.');
+            return;
+        }
+
+        const firstName = document.getElementById('tFirstName').value.trim();
+        const lastName = document.getElementById('tLastName').value.trim();
+        const role = document.getElementById('tRole').value.trim();
+        const company = document.getElementById('tCompany').value.trim();
+        const website = document.getElementById('tWebsite').value.trim();
+        const phone = document.getElementById('tPhone').value.trim();
+        const abn = document.getElementById('tAbn').value.trim();
+        const addr1 = document.getElementById('tAddr1').value.trim();
+        const addr2 = document.getElementById('tAddr2').value.trim();
+        const city = document.getElementById('tCity').value.trim();
+        const postal = document.getElementById('tPostal').value.trim();
+        const country = document.getElementById('tCountry').value.trim();
+        const state = document.getElementById('tState').value.trim();
+        const more = document.getElementById('tMore').value.trim();
+
+        const btn = document.getElementById('tradeSubmitBtn');
         btn.textContent = 'Submitting...';
         btn.disabled = true;
 
-emailjs.send('service_v7kiteu', 'template_45vh57k', {
-    business: company,
-    email: email,
-    phone: phone,
-    firstName: firstName,
-    lastName: lastName,
-    role: role,
-    website: website,
-    abn: abn,
-    address: `${addr1}${addr2 ? ', '+addr2 : ''}, ${city}, ${state} ${postal}, ${country}`,
-    more: more || 'Not provided'
-}).then(() => {
-            btn.textContent = 'Application Submitted ✓';
-            btn.style.background = '#4CAF50';
-            btn.style.color = '#fff';
-            setTimeout(() => closeTradeModal(), 2000);
-        }).catch(() => {
-            btn.textContent = 'Submission Failed — Try Again';
+        emailjs.send('service_v7kiteu', 'template_45vh57k', {
+            business: company,
+            email: email,
+            phone: phone,
+            firstName: firstName,
+            lastName: lastName,
+            role: role,
+            website: website || 'Not provided',
+            abn: abn,
+            address: `${addr1}${addr2 ? ', '+addr2 : ''}, ${city}, ${state} ${postal}, ${country}`,
+            more: more || 'Not provided'
+        }).then(() => {
+            btn.style.display = 'none';
+            document.getElementById('tradeFormSuccess').style.display = 'block';
+            document.getElementById('tradeFormSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(() => {
+                closeTradeModal();
+                btn.style.display = 'block';
+                btn.textContent = 'Submit Trade Application';
+                btn.disabled = false;
+                resetTradeForm();
+            }, 4000);
+        }).catch((err) => {
+            console.error('EmailJS error:', err);
+            btn.textContent = 'Submit Trade Application';
             btn.disabled = false;
+            showTradeError('Something went wrong. Please try again or contact us directly at info@ceyvora.com.au');
         });
+    }
+
+    function resetTradeForm() {
+        ['tFirstName','tLastName','tEmail','tRole','tCompany','tWebsite','tPhone','tAbn','tAddr1','tAddr2','tCity','tPostal','tState','tMore'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.value = '';
+        });
+        document.getElementById('tCountry').value = '';
+        hideTradeMessages();
     }
 
     init();
