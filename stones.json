@@ -186,5 +186,127 @@
       { "type": "image", "src": "https://lh3.googleusercontent.com/d/1NjgCqRRpvyhaiFrJwF9wA70ld0r5BZmz" },
       { "type": "video", "src": "https://player.vimeo.com/video/1197940131?autoplay=1&loop=1&background=1" }
     ]
+  },
+  {
+    "id": 7,
+    "name": "Yellow Sapphire",
+    "subtitle": "Ceylon",
+    "grade": "Eye Clean",
+    "origin": "Sri Lanka",
+    "colour": "Yellow",
+    "carats": "1.78ct",
+    "dimensions": "8.33 × 6.12 × 3.42mm",
+    "treatment": "Unheated & Untreated",
+    "certification": "Included",
+    "price": "AUD $990",
+    "thumbImage": "https://lh3.googleusercontent.com/d/1zig3fhMat76Q2-bU5dg2gfUth0GQTot4",
+    "media": [
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/1zig3fhMat76Q2-bU5dg2gfUth0GQTot4" },
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/1Xy8qWlMiNvrJgdhhlUjOuphKraeDYPIG" },
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/1hv9ZqPxKiIs_qnZ9TI26fankYl46iPoV" },
+      { "type": "video", "src": "https://player.vimeo.com/video/1197952786?autoplay=1&loop=1&background=1" }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Pink Sapphire",
+    "subtitle": "Ceylon",
+    "grade": "Eye Clean",
+    "origin": "Sri Lanka",
+    "colour": "Vivid Pink",
+    "carats": "1.06ct",
+    "dimensions": "5.84 × 4.55 × 4.15mm",
+    "treatment": "Unheated & Untreated",
+    "certification": "Included",
+    "price": "AUD $1,790",
+    "thumbImage": "https://lh3.googleusercontent.com/d/1zR_f8iGdgPfq1qY5F-hnaJnRY4RxmDky",
+    "media": [
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/1zR_f8iGdgPfq1qY5F-hnaJnRY4RxmDky" },
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/1TElhY9ZOgwXyZ-owCXaoDwnGslHZriVY" },
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/1btzCwCr7YGYpR7jukP9teUtF2NIx1wA0" },
+      { "type": "video", "src": "https://player.vimeo.com/video/1197954322?autoplay=1&loop=1&background=1" }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Yellow Sapphire",
+    "subtitle": "Ceylon",
+    "grade": "Eye Clean",
+    "origin": "Sri Lanka",
+    "colour": "Vivid Yellow",
+    "carats": "1.54ct",
+    "dimensions": "7.38 × 5.42 × 4.27mm",
+    "treatment": "Unheated & Untreated",
+    "certification": "Included",
+    "price": "AUD $1,290",
+    "thumbImage": "https://lh3.googleusercontent.com/d/1pfsNJQB0lW0hG1nGXugWjMDpxf7ZxQ-L",
+    "media": [
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/1pfsNJQB0lW0hG1nGXugWjMDpxf7ZxQ-L" },
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/1Fa1a7KTVtT68DIwyG3kVQiXVtrr9DIMA" },
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/18ZiTyw3P2w2QFg2iFQcORNP7AuPHGFkK" },
+      { "type": "video", "src": "https://player.vimeo.com/video/1197956555?autoplay=1&loop=1&background=1" }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Bi-Colour Sapphire",
+    "subtitle": "Ceylon",
+    "grade": "Eye Clean",
+    "origin": "Sri Lanka",
+    "colour": "Bi-Colour (Pinkish-Yellow)",
+    "carats": "1.13ct",
+    "dimensions": "6.80 × 5.48 × 3.72mm",
+    "treatment": "Unheated & Untreated",
+    "certification": "Included",
+    "price": "AUD $990",
+    "thumbImage": "https://lh3.googleusercontent.com/d/18Wiv13AUtAFY3WuVqAakaLlYG_eUKTRe",
+    "media": [
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/18Wiv13AUtAFY3WuVqAakaLlYG_eUKTRe" },
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/1uQ53Y12l5cVG7D9qJvIekwVK78EKqIdP" },
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/14_69R4o-lMh487j6Qoa4V8bQqztsR_g8" },
+      { "type": "video", "src": "https://player.vimeo.com/video/1197957222?autoplay=1&loop=1&background=1" }
+    ]
+  },
+{
+    "id": 11,
+    "name": "Aquamarine",
+    "subtitle": "Madagascar",
+    "grade": "Loupe Clean",
+    "origin": "Madagascar",
+    "colour": "Santa Maria Blue",
+    "carats": "8.05ct",
+    "dimensions": "12.63 × 11.86 × 8.26mm",
+    "treatment": "Unheated & Untreated",
+    "certification": "Included — CGL Ceylon Gem Lab",
+    "price": "AUD $1,990",
+    "thumbImage": "https://lh3.googleusercontent.com/d/136O5jCyyiG2KyvJbTVUov-OtSt5Kf6wk",
+    "media": [
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/136O5jCyyiG2KyvJbTVUov-OtSt5Kf6wk" },
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/1dMBNMxFfXNQIkQh_cralKAXojfLjV7WG" },
+      { "type": "video", "src": "https://player.vimeo.com/video/1197958981?autoplay=1&loop=1&background=1" }
+    ]
+  },
+{
+    "id": 12,
+    "name": "Royal Crown Ring",
+    "subtitle": "18K Gold · Ceylon Sapphire",
+    "grade": "Certified",
+    "origin": "Sri Lanka",
+    "colour": "Royal Blue / Orchid Violet Colour-Change",
+    "carats": "18K · 1.09ct · Pear Cut · Colour-Change Sapphire",
+    "dimensions": "18K Yellow Gold · 6 Diamonds · 7 Sapphire Accents",
+    "treatment": "Natural · Handcrafted Bespoke",
+    "certification": "CSL & Gemlin Certificates Included",
+    "price": "AUD $1,990",
+    "thumbImage": "https://lh3.googleusercontent.com/d/17E9K192v6ry_mQgfizZJCfH4LQ9vmv8r",
+    "media": [
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/17E9K192v6ry_mQgfizZJCfH4LQ9vmv8r" },
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/10RO0z6R6dORZRRqhEXdjxTQ_gprIz2l2" },
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/1bZ1u6u4Cponc8CNNsGAiBCNeQlFq_no6" },
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/1uWPKmwaO_vUDMmAl9x7fAeO6p_UWhJQG" },
+      { "type": "image", "src": "https://lh3.googleusercontent.com/d/1pNpAbxrlJSKpbZO9KjwybPiL93vG-ONI" },
+      { "type": "video", "src": "https://player.vimeo.com/video/1197962907?autoplay=1&loop=1&background=1" },
+      { "type": "video", "src": "https://player.vimeo.com/video/1197962908?autoplay=1&loop=1&background=1" }
+    ]
   }
 ]
