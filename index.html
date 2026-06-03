@@ -1039,12 +1039,24 @@
 
             .pricing-options { grid-template-columns: 1fr; }
 
-            .trade-overlay { align-items: flex-end; padding: 0; }
+  .trade-overlay {
+                align-items: flex-end;
+                padding: 0;
+                overflow: hidden;
+            }
 
             .trade-modal {
                 max-height: 95vh;
+                width: 100%;
+                max-width: 100%;
                 border-radius: 20px 20px 0 0;
+                overflow-y: auto;
+                overflow-x: hidden;
+                -webkit-overflow-scrolling: touch;
             }
+
+            .trade-modal-header { padding: 28px 20px 16px; }
+            .trade-modal-body { padding: 20px 20px 40px; }
 
             .trade-modal-header { padding: 24px 20px 16px; }
             .trade-modal-body { padding: 20px; }
@@ -1393,10 +1405,12 @@
         document.getElementById('codeError').style.display = 'none';
         document.getElementById('codePanelInput').value = '';
 
-        document.getElementById('modalOverlay').classList.add('active');
+document.getElementById('modalOverlay').classList.add('active');
         document.body.style.overflow = 'hidden';
         document.body.style.position = 'fixed';
         document.body.style.width = '100%';
+        document.body.style.left = '0';
+        document.body.style.right = '0';
     }
 
     function closeModal() {
@@ -1512,12 +1526,22 @@
     }
 
     // ── Trade Registration ──
-    function openTradeModal() {
+function openTradeModal() {
         document.getElementById('tradeOverlay').classList.add('active');
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+        document.body.style.left = '0';
+        document.body.style.right = '0';
     }
 
-    function closeTradeModal() {
+function closeTradeModal() {
         document.getElementById('tradeOverlay').classList.remove('active');
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
     }
 
     document.getElementById('tradeOverlay').addEventListener('click', e => {
