@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -13,9 +12,7 @@
     <meta property="og:image" content="https://lh3.googleusercontent.com/d/1jPH1VKrdqABKNWgnFcknGe-GILozI70Y">
     <meta property="og:url" content="https://wholesale.ceyvora.com.au">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #B8935A;
@@ -30,11 +27,7 @@
             --white: #FFFFFF;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background: var(--black);
@@ -43,21 +36,24 @@
             min-height: 100vh;
         }
 
+        /* ── HEADER ── */
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            background: rgba(10, 10, 10, 0.96);
+            background: rgba(10,10,10,0.96);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(184, 147, 90, 0.18);
+            border-bottom: 1px solid rgba(184,147,90,0.18);
             padding: 16px 48px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 8px;
+            /* NOT fixed by default — JS adds fixed class on desktop */
+        }
+
+        header.is-fixed {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
         }
 
         .logo {
@@ -73,64 +69,22 @@
             filter: brightness(0) saturate(100%) invert(58%) sepia(20%) saturate(400%) hue-rotate(355deg) brightness(95%);
         }
 
-        .logo-text {
-            font-family: 'Cinzel', serif;
-            font-size: 13px;
-            font-weight: 400;
-            letter-spacing: 4px;
-            color: var(--cream);
-            text-transform: uppercase;
-        }
-
         .header-tag {
             font-family: 'Montserrat', sans-serif;
-            font-size: 19px;
+            font-size: 11px;
             letter-spacing: 3px;
             color: var(--grey);
             text-transform: uppercase;
-            border: 1px solid rgba(184, 147, 90, 0.2);
+            border: 1px solid rgba(184,147,90,0.2);
             padding: 5px 14px;
         }
 
         /* ── HERO ── */
         .hero {
-            padding: 148px 48px 72px;
+            padding: 40px 48px 72px;
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 700px;
-            height: 500px;
-            background: radial-gradient(ellipse, rgba(184, 147, 90, 0.05) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-eyebrow {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-        }
-
-        .hero-eyebrow::before,
-        .hero-eyebrow::after {
-            content: '';
-            width: 40px;
-            height: 1px;
-            background: rgba(184, 147, 90, 0.4);
         }
 
         .hero h1 {
@@ -144,38 +98,16 @@
             text-transform: uppercase;
         }
 
-        .hero h1 span {
-            color: var(--gold);
-        }
+        .hero h1 span { color: var(--gold); }
 
         .hero-sub {
             font-family: 'Montserrat', sans-serif;
-            font-size: 22px;
+            font-size: 11px;
             letter-spacing: 2px;
             color: var(--grey);
             text-transform: uppercase;
-            margin: 20px 0 12px;
+            margin: 16px 0 12px;
             font-style: italic;
-        }
-
-        .hero-access {
-            font-size: 14px;
-            color: var(--grey);
-            line-height: 1.9;
-            margin-top: 4px;
-        }
-
-        .hero-access a {
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        .gold-rule {
-            width: 1px;
-            height: 50px;
-            background: linear-gradient(to bottom, transparent, var(--gold), transparent);
-            margin: 28px auto;
-            opacity: 0.5;
         }
 
         /* ── CATALOGUE ── */
@@ -202,9 +134,8 @@
         }
 
         .section-line {
-            flex: 1;
-            height: 1px;
-            background: rgba(184, 147, 90, 0.15);
+            flex: 1; height: 1px;
+            background: rgba(184,147,90,0.15);
         }
 
         .stone-grid {
@@ -212,14 +143,6 @@
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 16px;
             padding: 0 16px;
-        }
-
-        @media (max-width: 600px) {
-            .stone-grid {
-                grid-template-columns: calc(50% - 8px) calc(50% - 8px) !important;
-                gap: 16px !important;
-                padding: 0 16px !important;
-            }
         }
 
         .stone-card {
@@ -231,38 +154,27 @@
         }
 
         .stone-card-media {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             position: relative;
         }
 
-        .stone-card-media img,
-        .stone-card-media video {
-            width: 100%;
-            height: 100%;
+        .stone-card-media img {
+            width: 100%; height: 100%;
             object-fit: cover;
             transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             display: block;
         }
 
-        .stone-card:hover .stone-card-media img,
-        .stone-card:hover .stone-card-media video {
-            transform: scale(1.06);
-        }
+        .stone-card:hover .stone-card-media img { transform: scale(1.06); }
 
         .stone-card-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top,
-                    rgba(0, 0, 0, 0.9) 0%,
-                    rgba(0, 0, 0, 0.4) 40%,
-                    rgba(0, 0, 0, 0.05) 70%,
-                    transparent 100%);
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 40%, transparent 100%);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             padding: 24px;
-            transition: background 0.3s;
         }
 
         .card-grade {
@@ -270,12 +182,12 @@
             font-size: 8px;
             letter-spacing: 3px;
             color: var(--gold);
-            border: 1px solid rgba(184, 147, 90, 0.45);
+            border: 1px solid rgba(184,147,90,0.45);
             padding: 3px 10px;
             display: inline-block;
             margin-bottom: 10px;
             align-self: flex-start;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0,0,0,0.3);
         }
 
         .card-name {
@@ -301,8 +213,8 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(184, 147, 90, 0.12);
-            border: 1px solid rgba(184, 147, 90, 0.35);
+            background: rgba(184,147,90,0.12);
+            border: 1px solid rgba(184,147,90,0.35);
             color: var(--gold);
             padding: 9px 16px;
             font-family: 'Montserrat', sans-serif;
@@ -312,20 +224,15 @@
             cursor: pointer;
             opacity: 0;
             transform: translateY(10px);
-            transition: opacity 0.3s, transform 0.3s, background 0.2s;
+            transition: opacity 0.3s, transform 0.3s;
             align-self: flex-start;
+            white-space: nowrap;
         }
 
-        .stone-card:hover .card-btn {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .stone-card:hover .card-btn { opacity: 1; transform: translateY(0); }
 
         @media (hover: none) {
-            .card-btn {
-                opacity: 1 !important;
-                transform: translateY(0) !important;
-            }
+            .card-btn { opacity: 1 !important; transform: translateY(0) !important; }
         }
 
         /* ── MODAL ── */
@@ -333,7 +240,7 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0,0,0,0.9);
             backdrop-filter: blur(20px);
             z-index: 300;
             align-items: center;
@@ -341,13 +248,11 @@
             padding: 20px;
         }
 
-        .modal-overlay.active {
-            display: flex;
-        }
+        .modal-overlay.active { display: flex; }
 
         .modal {
             background: var(--dark-2);
-            border: 1px solid rgba(184, 147, 90, 0.12);
+            border: 1px solid rgba(184,147,90,0.12);
             max-width: 980px;
             width: 100%;
             max-height: 92vh;
@@ -359,23 +264,15 @@
         }
 
         @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .modal-close {
             position: absolute;
-            top: 18px;
-            right: 22px;
-            background: rgba(30, 30, 30, 0.95);
-            border: 1px solid rgba(159, 134, 107, 0.3);
+            top: 18px; right: 22px;
+            background: rgba(30,30,30,0.95);
+            border: 1px solid rgba(159,134,107,0.3);
             color: var(--cream);
             font-size: 13px;
             letter-spacing: 2px;
@@ -383,57 +280,25 @@
             text-transform: uppercase;
             cursor: pointer;
             z-index: 20;
-            transition: background 0.2s;
-            line-height: 1;
             padding: 12px 20px;
             display: flex;
             align-items: center;
             gap: 6px;
+            transition: background 0.2s;
         }
 
-        .modal-close:hover {
-            background: rgba(159, 134, 107, 0.2);
-        }
+        .modal-close:hover { background: rgba(159,134,107,0.2); }
 
-        @media (max-width: 768px) {
-            .modal-close {
-                position: sticky;
-                bottom: 0;
-                top: auto;
-                width: 100%;
-                height: 72px;
-                padding: 0;
-                border-radius: 0;
-                border: none;
-                border-top: 2px solid rgba(159, 134, 107, 0.3);
-                background: #111;
-                font-size: 13px;
-                letter-spacing: 3px;
-                justify-content: center;
-                margin-top: 24px;
-                color: var(--cream);
-                display: flex;
-                align-items: center;
-            }
-        }
-
-        /* Media */
-        .modal-media {
-            background: var(--dark-3);
-        }
+        .modal-media { background: var(--dark-3); }
 
         .media-main {
-            width: 100%;
-            height: 400px;
+            width: 100%; height: 400px;
             overflow: hidden;
-            position: relative;
             background: var(--dark-3);
         }
 
-        .media-main img,
-        .media-main video {
-            width: 100%;
-            height: 100%;
+        .media-main img, .media-main video {
+            width: 100%; height: 100%;
             object-fit: cover;
             display: block;
         }
@@ -444,11 +309,11 @@
             padding: 6px;
             background: var(--dark);
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .media-thumb {
-            width: 68px;
-            height: 54px;
+            width: 68px; height: 54px;
             object-fit: cover;
             cursor: pointer;
             opacity: 0.55;
@@ -458,8 +323,7 @@
         }
 
         .media-thumb-video {
-            width: 68px;
-            height: 54px;
+            width: 68px; height: 54px;
             background: var(--dark-3);
             display: flex;
             align-items: center;
@@ -468,18 +332,15 @@
             flex-shrink: 0;
             border: 1px solid transparent;
             font-size: 18px;
-            transition: border-color 0.2s;
+            color: var(--gold);
         }
 
-        .media-thumb.active,
-        .media-thumb:hover,
-        .media-thumb-video.active,
-        .media-thumb-video:hover {
+        .media-thumb.active, .media-thumb:hover,
+        .media-thumb-video.active, .media-thumb-video:hover {
             opacity: 1;
             border-color: var(--gold);
         }
 
-        /* Info */
         .modal-info {
             padding: 44px 36px 36px;
             display: flex;
@@ -491,7 +352,7 @@
             font-size: 8px;
             letter-spacing: 3px;
             color: var(--gold);
-            border: 1px solid rgba(184, 147, 90, 0.35);
+            border: 1px solid rgba(184,147,90,0.35);
             padding: 4px 12px;
             display: inline-block;
             align-self: flex-start;
@@ -519,9 +380,8 @@
         }
 
         .divider {
-            width: 100%;
-            height: 1px;
-            background: rgba(184, 147, 90, 0.12);
+            width: 100%; height: 1px;
+            background: rgba(184,147,90,0.12);
             margin: 0 0 20px;
         }
 
@@ -548,17 +408,14 @@
             letter-spacing: 1px;
         }
 
-        /* Pricing */
         .pricing-box {
             background: var(--dark-3);
-            border: 1px solid rgba(184, 147, 90, 0.12);
+            border: 1px solid rgba(184,147,90,0.12);
             padding: 18px;
             margin-bottom: 16px;
         }
 
-        .pricing-locked {
-            text-align: center;
-        }
+        .pricing-locked { text-align: center; }
 
         .pricing-locked p {
             font-family: 'Montserrat', sans-serif;
@@ -576,30 +433,22 @@
             color: var(--gold);
             padding: 11px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
+            font-size: 12px;
             letter-spacing: 3px;
             text-transform: uppercase;
             cursor: pointer;
             transition: background 0.2s;
         }
 
-        .unlock-btn:hover {
-            background: rgba(184, 147, 90, 0.08);
-        }
+        .unlock-btn:hover { background: rgba(184,147,90,0.08); }
 
-        .mini-gate {
-            display: none;
-            margin-top: 12px;
-        }
-
-        .mini-gate.active {
-            display: block;
-        }
+        .mini-gate { display: none; margin-top: 12px; }
+        .mini-gate.active { display: block; }
 
         .mini-gate input {
             width: 100%;
             background: var(--dark);
-            border: 1px solid rgba(184, 147, 90, 0.25);
+            border: 1px solid rgba(184,147,90,0.25);
             color: var(--cream);
             padding: 10px 14px;
             font-family: 'Montserrat', sans-serif;
@@ -611,9 +460,7 @@
             transition: border-color 0.2s;
         }
 
-        .mini-gate input:focus {
-            border-color: var(--gold);
-        }
+        .mini-gate input:focus { border-color: var(--gold); }
 
         .mini-gate button {
             width: 100%;
@@ -627,11 +474,6 @@
             text-transform: uppercase;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .mini-gate button:hover {
-            background: var(--gold-light);
         }
 
         .mini-error {
@@ -644,17 +486,9 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        .pricing-unlocked {
-            display: none;
-        }
-
-        .pricing-unlocked.active {
-            display: block;
-        }
-
-        .pricing-locked.hidden {
-            display: none;
-        }
+        .pricing-unlocked { display: none; }
+        .pricing-unlocked.active { display: block; }
+        .pricing-locked.hidden { display: none; }
 
         .price-amount {
             font-family: 'Cinzel', serif;
@@ -669,11 +503,11 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 10px;
             letter-spacing: 1px;
-            color: var(--grey);
+            color: var(--gold);
             line-height: 1.7;
+            margin-top: 6px;
         }
 
-        /* Enquiry */
         .enquire-btn {
             width: 100%;
             background: var(--gold);
@@ -690,25 +524,15 @@
             margin-bottom: 8px;
         }
 
-        .enquire-btn:hover {
-            background: var(--gold-light);
-        }
+        .enquire-btn:hover { background: var(--gold-light); }
 
-        .enquiry-form {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            margin-top: 10px;
-        }
-
-        .enquiry-form.active {
-            display: flex;
-        }
+        .enquiry-form { display: none; flex-direction: column; gap: 6px; margin-top: 10px; }
+        .enquiry-form.active { display: flex; }
 
         .enquiry-form input,
         .enquiry-form textarea {
             background: var(--dark-3);
-            border: 1px solid rgba(184, 147, 90, 0.18);
+            border: 1px solid rgba(184,147,90,0.18);
             color: var(--cream);
             padding: 10px 14px;
             font-family: 'Montserrat', sans-serif;
@@ -719,24 +543,16 @@
         }
 
         .enquiry-form input::placeholder,
-        .enquiry-form textarea::placeholder {
-            color: var(--grey);
-            font-size: 10px;
-            letter-spacing: 1px;
-        }
+        .enquiry-form textarea::placeholder { color: var(--grey); font-size: 10px; letter-spacing: 1px; }
 
         .enquiry-form input:focus,
-        .enquiry-form textarea:focus {
-            border-color: var(--gold);
-        }
+        .enquiry-form textarea:focus { border-color: var(--gold); }
 
-        .enquiry-form textarea {
-            height: 72px;
-        }
+        .enquiry-form textarea { height: 72px; }
 
         .enquiry-submit {
             background: var(--dark-3);
-            border: 1px solid rgba(184, 147, 90, 0.35);
+            border: 1px solid rgba(184,147,90,0.35);
             color: var(--gold);
             padding: 11px;
             font-family: 'Montserrat', sans-serif;
@@ -747,13 +563,10 @@
             transition: background 0.2s;
         }
 
-        .enquiry-submit:hover {
-            background: rgba(184, 147, 90, 0.08);
-        }
+        .enquiry-submit:hover { background: rgba(184,147,90,0.08); }
 
-        /* ── FOOTER ── */
         footer {
-            border-top: 1px solid rgba(184, 147, 90, 0.12);
+            border-top: 1px solid rgba(184,147,90,0.12);
             padding: 36px 48px;
             display: flex;
             align-items: center;
@@ -778,12 +591,8 @@
             line-height: 2;
         }
 
-        .footer-info a {
-            color: var(--gold-light);
-            text-decoration: none;
-        }
+        .footer-info a { color: var(--gold-light); text-decoration: none; }
 
-        /* ── LOADING ── */
         .loading {
             text-align: center;
             padding: 80px;
@@ -794,30 +603,29 @@
             text-transform: uppercase;
         }
 
-        /* ── RESPONSIVE ── */
+        /* ── MOBILE ── */
         @media (max-width: 768px) {
-            header {
-                padding: 14px 20px;
-            }
+            header { padding: 14px 20px; }
+            .logo img { height: 60px; }
+            .header-tag { font-size: 9px; }
 
-            .hero {
-                padding: 110px 24px 56px;
-            }
+            .hero { padding: 24px 20px 40px; }
 
-            .catalogue {
-                padding: 0 12px 80px;
-            }
+            .catalogue { padding: 0 12px 80px; }
 
             .stone-grid {
                 grid-template-columns: 1fr 1fr !important;
                 gap: 10px !important;
-                padding: 0 10px !important;
+                padding: 0 8px !important;
             }
 
-            .modal-overlay {
-                align-items: flex-end;
-                padding: 0;
-            }
+            .stone-card-overlay { padding: 12px; }
+            .card-grade { font-size: 7px; padding: 2px 8px; margin-bottom: auto; }
+            .card-name { font-size: 13px; margin-bottom: 2px; }
+            .card-meta { font-size: 8px; margin-bottom: 8px; letter-spacing: 1px; }
+            .card-btn { font-size: 8px; padding: 7px 10px; letter-spacing: 1px; white-space: nowrap; }
+
+            .modal-overlay { align-items: flex-end; padding: 0; }
 
             .modal {
                 grid-template-columns: 1fr;
@@ -831,346 +639,319 @@
             }
 
             @keyframes slideUpMobile {
-                from {
-                    transform: translateY(100%);
-                }
-
-                to {
-                    transform: translateY(0);
-                }
+                from { transform: translateY(100%); }
+                to { transform: translateY(0); }
             }
 
-            .media-main {
-                height: 260px;
+            .modal-close {
+                position: sticky;
+                bottom: 0;
+                top: auto;
+                right: auto;
+                width: 100%;
+                height: 72px;
+                padding: 0;
+                border-radius: 0;
+                border: none;
+                border-top: 2px solid rgba(159,134,107,0.3);
+                background: #111;
+                font-size: 13px;
+                letter-spacing: 3px;
+                justify-content: center;
+                margin-top: 24px;
             }
 
-            .modal-info {
-                padding: 20px 20px 48px;
-            }
+            .media-main { height: 260px; }
+            .modal-info { padding: 20px 20px 0; }
 
-            footer {
-                flex-direction: column;
-                gap: 14px;
-                text-align: center;
-            }
-
-            .footer-info {
-                text-align: center;
-            }
-
-            header .header-tag {
-                display: none;
-            }
+            footer { flex-direction: column; gap: 14px; text-align: center; }
+            .footer-info { text-align: center; }
         }
 
-        @media (max-width: 480px) {
-            .stone-grid {
-                grid-template-columns: 1fr 1fr !important;
-                gap: 8px !important;
-                padding: 0 8px !important;
-            }
-        }
-
-        ::-webkit-scrollbar {
-            width: 3px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--dark);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: rgba(184, 147, 90, 0.4);
-        }
+        ::-webkit-scrollbar { width: 3px; }
+        ::-webkit-scrollbar-track { background: var(--dark); }
+        ::-webkit-scrollbar-thumb { background: rgba(184,147,90,0.4); }
     </style>
 </head>
-
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="assets/Ceyvora-logo.png" alt="Ceyvora & Co." onerror="this.style.display='none'">
-            <div class="header-tag">· Wholesale Only ·</div>
+<header id="siteHeader">
+    <div class="logo">
+        <img src="assets/Ceyvora-logo.png" alt="Ceyvora & Co." onerror="this.style.display='none'">
+        <div class="header-tag">· Wholesale Only ·</div>
+    </div>
+</header>
+
+<section class="hero" id="hero">
+    <h1>Trade<br><span>Catalogue</span></h1>
+    <p class="hero-sub">Direct from Sri Lanka's Ratnapura Region · Ceylon & Madagascar Origin · Certified</p>
+</section>
+
+<section class="catalogue">
+    <div class="section-header">
+        <div class="section-title">Current Stock</div>
+        <div class="section-line"></div>
+    </div>
+    <div class="stone-grid" id="stoneGrid">
+        <div class="loading">Loading catalogue...</div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-logo">Ceyvora & Co.</div>
+    <div class="footer-info">
+        <a href="mailto:info@ceyvora.com.au">info@ceyvora.com.au</a><br>
+        <a href="tel:0458486576">0458 486 576</a><br>
+        <a href="https://www.ceyvora.com.au" target="_blank">www.ceyvora.com.au</a>
+    </div>
+</footer>
+
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+        <button class="modal-close" onclick="closeModal()">✕ &nbsp;Close</button>
+
+        <div class="modal-media">
+            <div class="media-main" id="mediaMain"></div>
+            <div class="media-thumbs" id="mediaThumbs"></div>
         </div>
-    </header>
 
-    <section class="hero">
-        <div>
-            <br>
-            <br>
-        </div>
-        <div></div>
-        <h1>Trade<br><span>Catalogue</span></h1>
+        <div class="modal-info">
+            <div class="modal-grade" id="modalGrade"></div>
+            <div class="modal-name" id="modalName"></div>
+            <div class="modal-origin-line" id="modalOrigin"></div>
+            <div class="divider"></div>
+            <div class="specs-grid" id="modalSpecs"></div>
+            <div class="divider"></div>
 
-        <p class="hero-access">
-            Pricing visible to verified trade buyers only.<br>
-            Contact us to request access: <a style="color:var(--gold);">info@ceyvora.com.au</a> · <a
-                style="color:var(--gold);">0458 486 576</a>
-        </p>
-        <p class="hero-sub" style="font-size:13px;margin-top:16px;">Direct from Sri Lanka's Ratnapura Region · Ceylon &
-            Madagascar Origin · Certified</p>
-    </section>
-
-    <section class="catalogue">
-        <div class="section-header">
-            <div class="section-title">Current Stock</div>
-            <div class="section-line"></div>
-        </div>
-        <div class="stone-grid" id="stoneGrid">
-            <div class="loading">Loading catalogue...</div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-logo">Ceyvora & Co.</div>
-        <div class="footer-info">
-            <a href="mailto:info@ceyvora.com.au">info@ceyvora.com.au</a><br>
-            <a href="tel:0458486576">0458 486 576</a><br>
-            <a href="https://www.ceyvora.com.au" target="_blank">www.ceyvora.com.au</a>
-        </div>
-    </footer>
-
-    <!-- MODAL -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal">
-            <button class="modal-close" onclick="closeModal()">✕ &nbsp;Close</button>
-
-            <div class="modal-media">
-                <div class="media-main" id="mediaMain"></div>
-                <div class="media-thumbs" id="mediaThumbs"></div>
+            <div class="pricing-box">
+                <div class="pricing-locked" id="pricingLocked">
+                    <p>Pricing available to verified trade buyers.<br>Enter your access code to unlock.</p>
+                    <button class="unlock-btn" onclick="showMiniGate()">🔒 &nbsp;View Pricing</button>
+                    <div class="mini-gate" id="miniGate">
+                        <input type="password" id="miniPwInput" placeholder="ACCESS CODE" onkeydown="if(event.key==='Enter')checkPw()">
+                        <button onclick="checkPw()">Unlock Pricing</button>
+                        <div class="mini-error" id="miniError">Incorrect code. Please try again.</div>
+                    </div>
+                </div>
+                <div class="pricing-unlocked" id="pricingUnlocked">
+                    <div class="spec-label" style="margin-bottom:6px;">Trade Price</div>
+                    <div class="price-amount" id="priceAmount"></div>
+                    <div id="priceDeposit" class="price-deposit">or make us an offer</div>
+                </div>
             </div>
 
-            <div class="modal-info">
-                <div class="modal-grade" id="modalGrade"></div>
-                <div class="modal-name" id="modalName"></div>
-                <div class="modal-origin-line" id="modalOrigin"></div>
-                <div class="divider"></div>
-                <div class="specs-grid" id="modalSpecs"></div>
-                <div class="divider"></div>
-
-                <div class="pricing-box">
-                    <div class="pricing-locked" id="pricingLocked">
-                        <p>Pricing available to verified trade buyers.<br>Enter your access code to unlock.</p>
-                        <button class="unlock-btn" onclick="showMiniGate()">🔒 &nbsp;View Pricing</button>
-                        <div class="mini-gate" id="miniGate">
-                            <input type="password" id="miniPwInput" placeholder="ACCESS CODE"
-                                onkeydown="if(event.key==='Enter')checkPw()">
-                            <button onclick="checkPw()">Unlock Pricing</button>
-                            <div class="mini-error" id="miniError">Incorrect code. Please try again.</div>
-                        </div>
-                    </div>
-                    <div class="pricing-unlocked" id="pricingUnlocked">
-                        <div class="spec-label" style="margin-bottom:6px;">Trade Price</div>
-                        <div class="price-amount" id="priceAmount"></div>
-                        <div id="priceDeposit" class="price-deposit" style="color:var(--gold);margin-top:6px;">or make
-                            us an offer</div>
-                    </div>
-                </div>
-
-                <button class="enquire-btn" onclick="toggleEnquiry()">Enquire / Make an Offer</button>
-                <div class="enquiry-form" id="enquiryForm">
-                    <input type="text" id="eqBusiness" placeholder="Business Name *" required>
-                    <input type="email" id="eqEmail" placeholder="Email Address *" required>
-                    <input type="tel" id="eqPhone" placeholder="Phone Number (optional)">
-                    <textarea id="eqMessage" placeholder="Your enquiry or offer..." style="height:80px;"></textarea>
-                    <button class="enquiry-submit" onclick="submitEnquiry()">Send Enquiry</button>
-                </div>
+            <button class="enquire-btn" onclick="toggleEnquiry()">Enquire / Make an Offer</button>
+            <div class="enquiry-form" id="enquiryForm">
+                <input type="text" id="eqBusiness" placeholder="Business Name *" required>
+                <input type="email" id="eqEmail" placeholder="Email Address *" required>
+                <input type="tel" id="eqPhone" placeholder="Phone Number (optional)">
+                <textarea id="eqMessage" placeholder="Your enquiry or offer..." style="height:80px;"></textarea>
+                <button class="enquiry-submit" onclick="submitEnquiry()">Send Enquiry</button>
             </div>
         </div>
     </div>
+</div>
 
-    <script>
-        const PASSWORD = 'CeyvoraWS2026';
-        let unlocked = false;
-        let currentStone = null;
+<script>
+    const PASSWORD = 'CeyvoraWS2026';
+    let unlocked = false;
+    let currentStone = null;
 
-        // Load stones from JSON
-        async function loadStones() {
-            try {
-                const res = await fetch('stones.json');
-                const stones = await res.json();
-                buildGrid(stones);
-                window._stones = stones;
-            } catch (e) {
-                document.getElementById('stoneGrid').innerHTML = '<div class="loading">Unable to load catalogue. Please refresh.</div>';
+    // ── Fix header on desktop only ──
+    function initHeader() {
+        const header = document.getElementById('siteHeader');
+        const hero = document.getElementById('hero');
+
+        function applyHeader() {
+            if (window.innerWidth >= 769) {
+                const h = header.offsetHeight;
+                header.classList.add('is-fixed');
+                hero.style.paddingTop = (h + 40) + 'px';
+            } else {
+                header.classList.remove('is-fixed');
+                hero.style.paddingTop = '';
             }
         }
 
-        function buildGrid(stones) {
-            const grid = document.getElementById('stoneGrid');
-            if (!stones.length) {
-                grid.innerHTML = '<div class="loading">No stones currently available. Check back soon.</div>';
-                return;
-            }
-            grid.innerHTML = stones.map(s => `
-    <div class="stone-card" onclick="openModal(${s.id})">
-      <div class="stone-card-media">
-        <img src="${s.thumbImage}" alt="${s.name}" loading="lazy">
-      </div>
-      <div class="stone-card-overlay">
-        <span class="card-grade">${s.grade}</span>
-        <div class="card-name">${s.name}</div>
-        <div class="card-meta">${s.carats} &middot; ${s.origin}</div>
-        <button class="card-btn">🔒 View Details</button>
-      </div>
-    </div>
-  `).join('');
+        applyHeader();
+        window.addEventListener('resize', applyHeader);
+    }
+
+    initHeader();
+
+    async function loadStones() {
+        try {
+            const res = await fetch('stones.json');
+            const stones = await res.json();
+            buildGrid(stones);
+            window._stones = stones;
+        } catch(e) {
+            document.getElementById('stoneGrid').innerHTML = '<div class="loading">Unable to load catalogue. Please refresh.</div>';
         }
+    }
 
-        function openModal(id) {
-            currentStone = window._stones.find(s => s.id === id);
-            if (!currentStone) return;
-
-            document.getElementById('modalGrade').textContent = currentStone.grade;
-            document.getElementById('modalName').textContent = currentStone.name;
-            document.getElementById('modalOrigin').textContent = `${currentStone.colour} · ${currentStone.origin} Origin`;
-
-            document.getElementById('modalSpecs').innerHTML = [
-                ['Carat Weight', currentStone.carats],
-                ['Dimensions', currentStone.dimensions],
-                ['Treatment', currentStone.treatment],
-                ['Certification', currentStone.certification],
-                ['Colour', currentStone.colour],
-                ['Origin', currentStone.origin],
-            ].map(([l, v]) => `
-    <div>
-      <div class="spec-label">${l}</div>
-      <div class="spec-value">${v}</div>
-    </div>
-  `).join('');
-
-            buildMedia();
-            updatePricing();
-
-            document.getElementById('enquiryForm').classList.remove('active');
-            document.getElementById('miniGate').classList.remove('active');
-            document.getElementById('miniError').style.display = 'none';
-            document.getElementById('miniPwInput').value = '';
-
-            document.getElementById('modalOverlay').classList.add('active');
-            document.body.style.overflow = 'hidden';
-            document.body.style.position = 'fixed';
-            document.body.style.width = '100%';
+    function buildGrid(stones) {
+        const grid = document.getElementById('stoneGrid');
+        if (!stones.length) {
+            grid.innerHTML = '<div class="loading">No stones currently available. Check back soon.</div>';
+            return;
         }
+        grid.innerHTML = stones.map(s => `
+            <div class="stone-card" onclick="openModal(${s.id})">
+                <div class="stone-card-media">
+                    <img src="${s.thumbImage}" alt="${s.name}" loading="lazy">
+                </div>
+                <div class="stone-card-overlay">
+                    <span class="card-grade">${s.grade}</span>
+                    <div class="card-name">${s.name}</div>
+                    <div class="card-meta">${s.carats} &middot; ${s.origin}</div>
+                    <button class="card-btn">View Details</button>
+                </div>
+            </div>
+        `).join('');
+    }
 
-        function closeModal() {
-            document.getElementById('modalOverlay').classList.remove('active');
-            document.body.style.overflow = '';
-            document.body.style.position = '';
-            document.body.style.width = '';
-            // Pause any playing video
-            const v = document.querySelector('#mediaMain video');
-            if (v) v.pause();
+    function openModal(id) {
+        currentStone = window._stones.find(s => s.id === id);
+        if (!currentStone) return;
+
+        document.getElementById('modalGrade').textContent = currentStone.grade;
+        document.getElementById('modalName').textContent = currentStone.name;
+        document.getElementById('modalOrigin').textContent = `${currentStone.colour} · ${currentStone.origin} Origin`;
+
+        document.getElementById('modalSpecs').innerHTML = [
+            ['Carat Weight', currentStone.carats],
+            ['Dimensions', currentStone.dimensions],
+            ['Treatment', currentStone.treatment],
+            ['Certification', currentStone.certification],
+            ['Colour', currentStone.colour],
+            ['Origin', currentStone.origin],
+        ].map(([l,v]) => `<div><div class="spec-label">${l}</div><div class="spec-value">${v}</div></div>`).join('');
+
+        buildMedia();
+        updatePricing();
+
+        document.getElementById('enquiryForm').classList.remove('active');
+        document.getElementById('miniGate').classList.remove('active');
+        document.getElementById('miniError').style.display = 'none';
+        document.getElementById('miniPwInput').value = '';
+
+        document.getElementById('modalOverlay').classList.add('active');
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+    }
+
+    function closeModal() {
+        document.getElementById('modalOverlay').classList.remove('active');
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+        const v = document.querySelector('#mediaMain video');
+        if (v) v.pause();
+    }
+
+    document.getElementById('modalOverlay').addEventListener('click', e => {
+        if (e.target === document.getElementById('modalOverlay')) closeModal();
+    });
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    function buildMedia() {
+        setMedia(0);
+        const thumbs = document.getElementById('mediaThumbs');
+        thumbs.innerHTML = currentStone.media.map((m,i) => {
+            if (m.type === 'video') return `<div class="media-thumb-video ${i===0?'active':''}" onclick="setMedia(${i})">▶</div>`;
+            return `<img class="media-thumb ${i===0?'active':''}" src="${m.src}" onclick="setMedia(${i})" alt="View ${i+1}">`;
+        }).join('');
+    }
+
+    function setMedia(i) {
+        const m = currentStone.media[i];
+        const main = document.getElementById('mediaMain');
+        if (m.type === 'video') {
+            main.innerHTML = `
+                <div style="position:relative;width:100%;height:100%;background:#111;">
+                    <iframe src="${m.src}" style="width:100%;height:100%;border:none;display:block;" allow="autoplay" allowfullscreen></iframe>
+                    <div onclick="this.style.display='none';"
+                         style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(0,0,0,0.3);">
+                        <div style="width:60px;height:60px;background:rgba(184,147,90,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;color:#0a0a0a;">▶</div>
+                    </div>
+                </div>`;
+        } else {
+            main.innerHTML = `<img src="${m.src}" alt="Stone" style="width:100%;height:100%;object-fit:cover;display:block;">`;
         }
-
-        document.getElementById('modalOverlay').addEventListener('click', e => {
-            if (e.target === document.getElementById('modalOverlay')) closeModal();
+        document.querySelectorAll('.media-thumb, .media-thumb-video').forEach((t,idx) => {
+            t.classList.toggle('active', idx === i);
         });
+    }
 
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    function updatePricing() {
+        const locked = document.getElementById('pricingLocked');
+        const uEl = document.getElementById('pricingUnlocked');
+        if (unlocked) {
+            locked.classList.add('hidden');
+            uEl.classList.add('active');
+            document.getElementById('priceAmount').textContent = currentStone.price;
+        } else {
+            locked.classList.remove('hidden');
+            uEl.classList.remove('active');
+        }
+    }
 
+    function showMiniGate() {
+        document.getElementById('miniGate').classList.add('active');
+        setTimeout(() => document.getElementById('miniPwInput').focus(), 100);
+    }
 
-        function buildMedia() {
-            setMedia(0);
-            const thumbs = document.getElementById('mediaThumbs');
-            thumbs.innerHTML = currentStone.media.map((m, i) => {
-                if (m.type === 'video') {
-                    return `<div class="media-thumb-video ${i === 0 ? 'active' : ''}" onclick="setMedia(${i})">▶</div>`;
-                }
-                return `<img class="media-thumb ${i === 0 ? 'active' : ''}" src="${m.src}" onclick="setMedia(${i})" alt="View ${i + 1}">`;
-            }).join('');
+    function checkPw() {
+        if (document.getElementById('miniPwInput').value === PASSWORD) {
+            unlocked = true;
+            document.getElementById('miniError').style.display = 'none';
+            updatePricing();
+        } else {
+            document.getElementById('miniError').style.display = 'block';
+        }
+    }
+
+    function toggleEnquiry() {
+        document.getElementById('enquiryForm').classList.toggle('active');
+    }
+
+    function submitEnquiry() {
+        const business = document.getElementById('eqBusiness').value;
+        const email = document.getElementById('eqEmail').value;
+        const phone = document.getElementById('eqPhone').value;
+        const message = document.getElementById('eqMessage').value;
+
+        if (!business || !email) {
+            alert('Please enter your business name and email address.');
+            return;
         }
 
-        function setMedia(i) {
-            const m = currentStone.media[i];
-            const main = document.getElementById('mediaMain');
-            if (m.type === 'video') {
-                main.innerHTML = `
-  <div style="position:relative;width:100%;height:100%;background:#111;">
-    <iframe src="${m.src}?rm=minimal" style="width:100%;height:100%;border:none;display:block;" allow="autoplay" allowfullscreen></iframe>
-    <div onclick="this.style.display='none';this.previousElementSibling.src=this.previousElementSibling.src+'&autoplay=1';" 
-         style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(0,0,0,0.3);">
-      <div style="width:60px;height:60px;background:rgba(159,134,107,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;color:#0a0a0a;">▶</div>
-    </div>
-  </div>`;
-            } else {
-                main.innerHTML = `<img src="${m.src}" alt="Stone" style="width:100%;height:100%;object-fit:cover;display:block;">`;
-            }
-            document.querySelectorAll('.media-thumb, .media-thumb-video').forEach((t, idx) => {
-                t.classList.toggle('active', idx === i);
-            });
-        }
+        const stone = currentStone ? `${currentStone.name} ${currentStone.carats} · ${currentStone.origin}` : '';
+        const btn = document.querySelector('.enquiry-submit');
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
 
-        function updatePricing() {
-            const locked = document.getElementById('pricingLocked');
-            const uEl = document.getElementById('pricingUnlocked');
-            if (unlocked) {
-                locked.classList.add('hidden');
-                uEl.classList.add('active');
-                document.getElementById('priceAmount').textContent = currentStone.price;
-            } else {
-                locked.classList.remove('hidden');
-                uEl.classList.remove('active');
-            }
-        }
+        emailjs.send('service_v7kiteu', 'template_rwk7wga', {
+            stone, business, email,
+            phone: phone || 'Not provided',
+            message: message || 'No message'
+        }).then(() => {
+            btn.textContent = 'Enquiry Sent ✓';
+            btn.style.color = '#4A9ECC';
+            setTimeout(() => {
+                closeModal();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 1500);
+        }).catch(() => {
+            btn.textContent = 'Send Failed — Try Again';
+            btn.disabled = false;
+        });
+    }
 
-        function showMiniGate() {
-            document.getElementById('miniGate').classList.add('active');
-            setTimeout(() => document.getElementById('miniPwInput').focus(), 100);
-        }
-
-        function checkPw() {
-            if (document.getElementById('miniPwInput').value === PASSWORD) {
-                unlocked = true;
-                document.getElementById('miniError').style.display = 'none';
-                updatePricing();
-            } else {
-                document.getElementById('miniError').style.display = 'block';
-            }
-        }
-
-        function toggleEnquiry() {
-            document.getElementById('enquiryForm').classList.toggle('active');
-        }
-
-        function submitEnquiry() {
-            const business = document.getElementById('eqBusiness').value;
-            const email = document.getElementById('eqEmail').value;
-            const phone = document.getElementById('eqPhone').value;
-            const message = document.getElementById('eqMessage').value;
-
-            if (!business || !email) {
-                alert('Please enter your business name and email address.');
-                return;
-            }
-
-            const stone = currentStone ? `${currentStone.name} ${currentStone.carats} · ${currentStone.origin}` : '';
-
-            const btn = document.querySelector('.enquiry-submit');
-            btn.textContent = 'Sending...';
-            btn.disabled = true;
-
-            emailjs.send('service_v7kiteu', 'template_rwk7wga', {
-                stone: stone,
-                business: business,
-                email: email,
-                phone: phone || 'Not provided',
-                message: message || 'No message'
-            }).then(() => {
-                btn.textContent = 'Enquiry Sent ✓';
-                btn.style.color = '#4A9ECC';
-                setTimeout(() => {
-                    closeModal();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }, 1500);
-            }).catch(() => {
-                btn.textContent = 'Send Failed — Try Again';
-                btn.disabled = false;
-            });
-        }
-
-        loadStones();
-    </script>
+    loadStones();
+</script>
 </body>
-
 </html>
