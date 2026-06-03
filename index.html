@@ -1574,13 +1574,18 @@ function closeTradeModal() {
         btn.textContent = 'Submitting...';
         btn.disabled = true;
 
-        emailjs.send('service_v7kiteu', 'template_rwk7wga', {
-            stone: 'TRADE ACCOUNT APPLICATION',
-            business: company,
-            email: email,
-            phone: phone,
-            message: `TRADE ACCOUNT APPLICATION\n\nContact: ${firstName} ${lastName}\nRole: ${role}\nEmail: ${email}\nPhone: ${phone}\n\nCompany: ${company}\nWebsite: ${website}\nABN/Reg: ${abn}\n\nAddress: ${addr1}${addr2 ? ', '+addr2 : ''}, ${city}, ${state} ${postal}, ${country}\n\nAbout: ${more}`
-        }).then(() => {
+emailjs.send('service_v7kiteu', 'template_45vh57k', {
+    business: company,
+    email: email,
+    phone: phone,
+    firstName: firstName,
+    lastName: lastName,
+    role: role,
+    website: website,
+    abn: abn,
+    address: `${addr1}${addr2 ? ', '+addr2 : ''}, ${city}, ${state} ${postal}, ${country}`,
+    more: more || 'Not provided'
+}).then(() => {
             btn.textContent = 'Application Submitted ✓';
             btn.style.background = '#4CAF50';
             btn.style.color = '#fff';
