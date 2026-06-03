@@ -1313,7 +1313,6 @@
             <div class="header-tag">· Wholesale Only ·</div>
         </div>
     </header>
-
     <!-- HERO -->
 
     <section class="hero" id="hero">
@@ -1347,6 +1346,7 @@
         </div>
 
     </section>
+
 
     <!-- CATALOGUE -->
     <section class="catalogue">
@@ -1391,11 +1391,14 @@
                         <div class="pricing-locked-title">Trade Pricing</div>
                         <div class="pricing-locked-sub">Wholesale pricing is available to<br>approved trade buyers only.
                         </div>
-                        <div class="pricing-options">
-                            <button class="pricing-opt-btn primary" onclick="showCodePanel()">I Have a Trade
-                                Code</button>
-                            <button class="pricing-opt-btn secondary" onclick="openTradeModal()">Apply for Trade
-                                Access</button>
+                        <button class="pricing-opt-btn primary" onclick="showCodePanel()"
+                            style="width:100%;padding:14px;font-size:9px;letter-spacing:3px;">🔒 &nbsp;Unlock Trade
+                            Pricing</button>
+                        <div style="margin-top:12px;">
+                            <span
+                                style="font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:1px;color:var(--grey);">Don't
+                                have a code? </span><button onclick="openTradeModal()" class="hero-apply-link">Apply for
+                                trade access</button>
                         </div>
                         <div class="code-panel" id="codePanel">
                             <input type="password" id="codePanelInput" placeholder="ENTER TRADE CODE"
@@ -1411,13 +1414,25 @@
                     </div>
                 </div>
 
-                <button class="enquire-btn" onclick="toggleEnquiry()">Enquire / Make an Offer</button>
+                <button class="enquire-btn" onclick="toggleEnquiry()">Enquire &nbsp;/&nbsp; <span
+                        style="border-bottom:2px dotted rgba(0,0,0,0.5);padding-bottom:1px;letter-spacing:4px;">Make an
+                        Offer</span></button>
                 <div class="enquiry-form" id="enquiryForm">
-                    <input type="text" id="eqBusiness" placeholder="Business Name *" required>
+                    <div id="enquiryError"
+                        style="display:none;background:rgba(204,68,68,0.1);border:1px solid rgba(204,68,68,0.3);padding:12px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:1px;color:#cc4444;line-height:1.8;text-align:center;">
+                    </div>
+                    <div id="enquirySuccess"
+                        style="display:none;background:rgba(76,175,80,0.1);border:1px solid rgba(76,175,80,0.3);padding:16px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:1px;color:#4CAF50;line-height:2;text-align:center;">
+                        <div style="font-size:22px;margin-bottom:6px;">✓</div>
+                        <strong>Enquiry Sent Successfully</strong><br>
+                        We will be in touch shortly.
+                    </div>
+                    <input type="text" id="eqBusiness" placeholder="Your Name or Business *" required>
                     <input type="email" id="eqEmail" placeholder="Email Address *" required>
                     <input type="tel" id="eqPhone" placeholder="Phone Number (optional)">
-                    <textarea id="eqMessage" placeholder="Your enquiry or offer..." style="height:80px;"></textarea>
-                    <button class="enquiry-submit" onclick="submitEnquiry()">Send Enquiry</button>
+                    <textarea id="eqMessage" placeholder="Your enquiry or make us an offer..."
+                        style="height:80px;"></textarea>
+                    <button class="enquiry-submit" id="enquirySubmitBtn" onclick="submitEnquiry()">Send Enquiry</button>
                 </div>
             </div>
         </div>
@@ -1667,6 +1682,14 @@
             updatePricing();
 
             document.getElementById('enquiryForm').classList.remove('active');
+            document.getElementById('enquiryError').style.display = 'none';
+            document.getElementById('enquirySuccess').style.display = 'none';
+            const eqBtn = document.getElementById('enquirySubmitBtn');
+            if (eqBtn) { eqBtn.style.display = ''; eqBtn.textContent = 'Send Enquiry'; eqBtn.disabled = false; }
+            ['eqBusiness', 'eqEmail'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.style.borderColor = '';
+            });
             document.getElementById('codePanel').classList.remove('active');
             document.getElementById('codeError').style.display = 'none';
             document.getElementById('codePanelInput').value = '';
@@ -1760,18 +1783,37 @@
         }
 
         function submitEnquiry() {
-            const business = document.getElementById('eqBusiness').value;
-            const email = document.getElementById('eqEmail').value;
-            const phone = document.getElementById('eqPhone').value;
-            const message = document.getElementById('eqMessage').value;
+            const business = document.getElementById('eqBusiness').value.trim();
+            const email = document.getElementById('eqEmail').value.trim();
+            const phone = document.getElementById('eqPhone').value.trim();
+            const message = document.getElementById('eqMessage').value.trim();
 
-            if (!business || !email) {
-                alert('Please enter your business name and email address.');
+            const errEl = document.getElementById('enquiryError');
+            const sucEl = document.getElementById('enquirySuccess');
+            errEl.style.display = 'none';
+            sucEl.style.display = 'none';
+
+            const missing = [];
+            if (!business) { missing.push('Your Name or Business'); document.getElementById('eqBusiness').style.borderColor = '#cc4444'; }
+            if (!email) { missing.push('Email Address'); document.getElementById('eqEmail').style.borderColor = '#cc4444'; }
+            if (!message) { missing.push('Your enquiry or offer'); document.getElementById('eqMessage').style.borderColor = '#cc4444'; }
+
+            if (missing.length) {
+                errEl.innerHTML = 'Please complete: ' + missing.join(' & ');
+                errEl.style.display = 'block';
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('eqEmail').style.borderColor = '#cc4444';
+                errEl.innerHTML = 'Please enter a valid email address.';
+                errEl.style.display = 'block';
                 return;
             }
 
             const stone = currentStone ? `${currentStone.name} ${currentStone.carats} · ${currentStone.origin}` : '';
-            const btn = document.querySelector('.enquiry-submit');
+            const btn = document.getElementById('enquirySubmitBtn');
             btn.textContent = 'Sending...';
             btn.disabled = true;
 
@@ -1780,11 +1822,20 @@
                 phone: phone || 'Not provided',
                 message: message || 'No message'
             }).then(() => {
-                btn.textContent = 'Enquiry Sent ✓';
-                btn.style.color = '#4A9ECC';
-                setTimeout(() => { closeModal(); window.scrollTo({ top: 0, behavior: 'smooth' }); }, 1500);
+                btn.style.display = 'none';
+                sucEl.style.display = 'block';
+                document.getElementById('eqBusiness').value = '';
+                document.getElementById('eqEmail').value = '';
+                document.getElementById('eqPhone').value = '';
+                document.getElementById('eqMessage').value = '';
+                setTimeout(() => {
+                    closeModal();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 4000);
             }).catch(() => {
-                btn.textContent = 'Send Failed — Try Again';
+                errEl.innerHTML = 'Something went wrong. Please try again or contact us at info@ceyvora.com.au';
+                errEl.style.display = 'block';
+                btn.textContent = 'Send Enquiry';
                 btn.disabled = false;
             });
         }
@@ -1898,6 +1949,13 @@
                 btn.style.display = 'none';
                 document.getElementById('tradeFormSuccess').style.display = 'block';
                 document.getElementById('tradeFormSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                setTimeout(() => {
+                    closeTradeModal();
+                    btn.style.display = 'block';
+                    btn.textContent = 'Submit Trade Application';
+                    btn.disabled = false;
+                    resetTradeForm();
+                }, 4000);
             }).catch((err) => {
                 console.error('EmailJS error:', err);
                 btn.textContent = 'Submit Trade Application';
