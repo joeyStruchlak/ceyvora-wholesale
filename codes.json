@@ -1,10 +1,9 @@
 {
-  "codes": [
-    "CeyvoraWS2026",
-    "MONIQUE-CVY-NZ"
-  ],
+  "codes": ["CeyvoraWS2026", "MONIQUE-CVY-NZ", "JASMIN-CVY-ADL", "ZOE-CVY-ADL"],
   "_notes": {
     "CeyvoraWS2026": "Internal test code — Ceyvora team only",
-    "MONIQUE-CVY-NZ": "Monique — New Zealand — approved June 2026"
+    "MONIQUE-CVY-NZ": "Monique — New Zealand — approved June 2026",
+        "JASMIN-CVY-ADL": "Jasmin — Adelaide — approved June 2026",
+    "ZOE-CVY-ADL": "Zoe — Adelaide — approved June 2026"
   }
 }
