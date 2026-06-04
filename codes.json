@@ -1,10 +1,18 @@
 {
-  "codes": ["CeyvoraWS2026", "MONIQUE-CVY-NZ", "JASMIN-CVY-ADL", "ZOE-CVY-ADL",  "EVERETT-CVY-ADL"],
+  "codes": [
+    "CeyvoraWS2026",
+    "MONIQUE-CVY-NZ",
+    "JASMIN-CVY-ADL",
+    "ZOE-CVY-ADL",
+    "EVERETT-CVY-ADL",
+    "UTOPIAN-CVY-ADL"
+  ],
   "_notes": {
     "CeyvoraWS2026": "Internal test code — Ceyvora team only",
     "MONIQUE-CVY-NZ": "Monique — New Zealand — approved June 2026",
     "JASMIN-CVY-ADL": "Jasmin — Adelaide — approved June 2026",
     "ZOE-CVY-ADL": "Zoe — Adelaide — approved June 2026",
-     "EVERETT-CVY-ADL": "Everett Brookes — Linda — Adelaide — approved June 2026"
+    "EVERETT-CVY-ADL": "Everett Brookes — Linda — Adelaide — approved June 2026",
+    "UTOPIAN-CVY-ADL": "Utopian Creations — Jo — Adelaide — approved June 2026"
   }
 }
