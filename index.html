@@ -1780,13 +1780,16 @@
         }
 
         // ── Grid ──
-        function buildGrid(stones) {
-            const grid = document.getElementById('stoneGrid');
-            if (!stones.length) {
-                grid.innerHTML = '<div class="loading">No stones currently available.</div>';
-                return;
-            }
-            grid.innerHTML = stones.map(s => `
+function buildGrid(stones) {
+    const grid = document.getElementById('stoneGrid');
+    if (!stones.length) {
+        grid.innerHTML = '<div class="loading">No stones currently available.</div>';
+        return;
+    }
+    const certified = stones.filter(s => s.certification !== 'Pending');
+    const pending = stones.filter(s => s.certification === 'Pending');
+
+    grid.innerHTML = certified.map(s => `
             <div class="stone-card" onclick="openModal(${s.id})">
                 <div class="stone-card-media">
                     <img src="${s.thumbImage}" alt="${s.name}" loading="lazy">
@@ -1799,8 +1802,31 @@
                     <button class="card-btn">View Details</button>
                 </div>
             </div>
-        `).join('');
-        }
+`).join('');
+
+    if (pending.length) {
+        grid.innerHTML += `
+        <div style="grid-column:1/-1;margin-top:40px;">
+            <div style="display:flex;align-items:center;gap:20px;margin-bottom:24px;">
+                <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);white-space:nowrap;">Arriving Soon</div>
+                <div style="flex:1;height:1px;background:rgba(184,147,90,0.15);"></div>
+            </div>
+            <div class="stone-grid">
+                ${pending.map(s => `
+                <div class="stone-card" onclick="openModal(${s.id})" style="opacity:0.75;">
+                    <div class="stone-card-media">
+                        <img src="${s.thumbImage}" alt="${s.name}" loading="lazy" style="filter:brightness(0.7);">
+                    </div>
+                    <div class="stone-card-overlay">
+                        <span class="card-grade" style="background:rgba(0,0,0,0.6);border-color:rgba(184,147,90,0.3);color:var(--grey);">Cert. Coming Soon</span>
+                        <div class="card-name">${s.name}</div>
+                        <div class="card-meta">${s.carats} &middot; ${s.origin}</div>
+                    </div>
+                </div>`).join('')}
+            </div>
+        </div>`;
+    }
+}
 
         // ── Modal ──
         function openModal(id) {
