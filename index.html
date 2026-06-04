@@ -1621,6 +1621,14 @@
             return validCodes.includes(code.trim());
         }
 
+        function showCardPrices() {
+            if (!window._stones) return;
+            window._stones.forEach(s => {
+                const el = document.getElementById(`card-price-${s.id}`);
+                if (el) el.style.display = 'block';
+            });
+        }
+
         function applyHeaderCode() {
             const val = document.getElementById('headerCodeInput').value;
             const status = document.getElementById('headerTradeStatus');
@@ -1630,6 +1638,8 @@
                 status.className = 'header-trade-status status-unlocked';
                 document.getElementById('headerCodeInput').value = '';
                 updatePricing();
+                showCardPrices();
+                setTimeout(() => { status.textContent = ''; }, 3000);
             } else {
                 status.textContent = 'Invalid code. Please try again.';
                 status.className = 'header-trade-status status-error';
@@ -1650,11 +1660,10 @@
                 </div>
                 <div class="stone-card-overlay">
                     <span class="card-grade">${s.grade}</span>
-                    <div>
-                        <div class="card-name">${s.name}</div>
-                        <div class="card-meta">${s.carats} &middot; ${s.origin}</div>
-                        <button class="card-btn">View Details</button>
-                    </div>
+                    <div class="card-name">${s.name}</div>
+                    <div class="card-meta">${s.carats} &middot; ${s.origin}</div>
+                    <div class="card-price" id="card-price-${s.id}" style="display:none;font-family:'Cinzel',serif;font-size:14px;color:#9f866b;letter-spacing:1px;margin-bottom:8px;font-weight:400;">${s.price}</div>
+                    <button class="card-btn">View Details</button>
                 </div>
             </div>
         `).join('');
@@ -1768,10 +1777,10 @@
             if (isValidCode(val)) {
                 unlocked = true;
                 document.getElementById('codeError').style.display = 'none';
-                // Also update header status
                 document.getElementById('headerTradeStatus').textContent = '✓ Trade pricing unlocked';
                 document.getElementById('headerTradeStatus').className = 'header-trade-status status-unlocked';
                 updatePricing();
+                showCardPrices();
             } else {
                 document.getElementById('codeError').style.display = 'block';
             }
