@@ -1489,9 +1489,104 @@
         <div class="footer-logo">Ceyvora & Co.</div>
         <div class="footer-info">
             © 2026 Ceyvora & Co. Pty Ltd · ACN 685 353 753<br>
-            Wholesale Supplier of Certified Natural Gemstones
+            Wholesale Supplier of Certified Natural Gemstones<br>
+            <span style="margin-top:8px;display:block;">
+                <a href="#" onclick="document.getElementById('privacyModal').style.display='flex';return false;"
+                    style="color:var(--grey);font-size:9px;letter-spacing:1px;">Privacy Policy</a>
+                &nbsp;·&nbsp;
+                <a href="#" onclick="document.getElementById('termsModal').style.display='flex';return false;"
+                    style="color:var(--grey);font-size:9px;letter-spacing:1px;">Terms & Conditions</a>
+            </span>
         </div>
     </footer>
+
+    <!-- PRIVACY MODAL -->
+    <div id="privacyModal"
+        style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:500;align-items:center;justify-content:center;padding:20px;"
+        onclick="if(event.target===this)this.style.display='none'">
+        <div
+            style="background:#1a1a1a;border:1px solid rgba(184,147,90,0.15);max-width:640px;width:100%;max-height:85vh;overflow-y:auto;padding:40px;">
+            <div
+                style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">
+                Ceyvora & Co.</div>
+            <h2
+                style="font-family:'Cinzel',serif;font-size:22px;font-weight:400;color:var(--cream);letter-spacing:2px;margin-bottom:24px;">
+                Privacy Policy</h2>
+            <div style="font-family:'Montserrat',sans-serif;font-size:12px;color:#c8bfb0;line-height:2;">
+                <p style="margin-bottom:16px;"><strong style="color:var(--cream);">Information We Collect</strong><br>
+                    When you submit a trade account application or enquiry through this portal, we collect your name,
+                    business name, email address, phone number and business address. We use this information solely to
+                    process your application and respond to your enquiry.</p>
+                <p style="margin-bottom:16px;"><strong style="color:var(--cream);">How We Use Your
+                        Information</strong><br>
+                    Your information is used to verify trade account eligibility, issue trade access codes and
+                    communicate with you about our gemstone catalogue. We do not sell, rent or share your personal
+                    information with third parties.</p>
+                <p style="margin-bottom:16px;"><strong style="color:var(--cream);">Marketing Communications</strong><br>
+                    By submitting your details you consent to receiving occasional communications from Ceyvora & Co.
+                    about new stock, pricing and offers. You may unsubscribe at any time by emailing
+                    info@ceyvora.com.au.</p>
+                <p style="margin-bottom:16px;"><strong style="color:var(--cream);">Data Security</strong><br>
+                    We take reasonable steps to protect your personal information from misuse, loss and unauthorised
+                    access. Your data is stored securely and access is limited to Ceyvora & Co. staff only.</p>
+                <p style="margin-bottom:16px;"><strong style="color:var(--cream);">Access & Corrections</strong><br>
+                    You may request access to or correction of your personal information at any time by contacting us at
+                    info@ceyvora.com.au.</p>
+                <p style="margin-bottom:24px;"><strong style="color:var(--cream);">Contact</strong><br>
+                    Ceyvora & Co. Pty Ltd · ACN 685 353 753<br>
+                    Adelaide, South Australia<br>
+                    info@ceyvora.com.au</p>
+            </div>
+            <button onclick="document.getElementById('privacyModal').style.display='none'"
+                style="background:var(--gold);color:var(--black);border:none;padding:12px 28px;font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;font-weight:600;cursor:pointer;">Close</button>
+        </div>
+    </div>
+
+    <!-- TERMS MODAL -->
+    <div id="termsModal"
+        style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:500;align-items:center;justify-content:center;padding:20px;"
+        onclick="if(event.target===this)this.style.display='none'">
+        <div
+            style="background:#1a1a1a;border:1px solid rgba(184,147,90,0.15);max-width:640px;width:100%;max-height:85vh;overflow-y:auto;padding:40px;">
+            <div
+                style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">
+                Ceyvora & Co.</div>
+            <h2
+                style="font-family:'Cinzel',serif;font-size:22px;font-weight:400;color:var(--cream);letter-spacing:2px;margin-bottom:24px;">
+                Terms & Conditions</h2>
+            <div style="font-family:'Montserrat',sans-serif;font-size:12px;color:#c8bfb0;line-height:2;">
+                <p style="margin-bottom:16px;"><strong style="color:var(--cream);">Trade Access</strong><br>
+                    Access to wholesale pricing is granted to approved trade buyers only. Trade codes are issued at the
+                    sole discretion of Ceyvora & Co. and are non-transferable. Misuse of a trade code will result in
+                    immediate revocation of access.</p>
+                <p style="margin-bottom:16px;"><strong style="color:var(--cream);">Pricing</strong><br>
+                    All prices displayed are in Australian Dollars (AUD) and are exclusive of GST. Ceyvora & Co. is not
+                    currently registered for GST. Prices are subject to change without notice.</p>
+                <p style="margin-bottom:16px;"><strong style="color:var(--cream);">Orders & Payment</strong><br>
+                    All sales are subject to availability. A confirmed sale requires written agreement from both
+                    parties. Payment terms will be agreed upon at time of sale. Ceyvora & Co. reserves the right to
+                    decline any order at its discretion.</p>
+                <p style="margin-bottom:16px;"><strong style="color:var(--cream);">Gemstone Descriptions</strong><br>
+                    All gemstone descriptions, weights, dimensions and certifications are provided in good faith based
+                    on independent laboratory reports. Natural gemstones may vary slightly in appearance from
+                    photography due to lighting and camera conditions.</p>
+                <p style="margin-bottom:16px;"><strong style="color:var(--cream);">Returns</strong><br>
+                    Due to the unique nature of natural gemstones, all sales are final once a sale has been agreed in
+                    writing. Any disputes must be raised within 48 hours of receipt of goods.</p>
+                <p style="margin-bottom:16px;"><strong style="color:var(--cream);">Shipping</strong><br>
+                    All gemstones are shipped fully insured via registered post or courier. Shipping costs are the
+                    responsibility of the buyer unless otherwise agreed. Risk passes to the buyer upon dispatch.</p>
+                <p style="margin-bottom:16px;"><strong style="color:var(--cream);">Limitation of Liability</strong><br>
+                    Ceyvora & Co. liability is limited to the value of the goods supplied. We accept no liability for
+                    consequential or indirect loss arising from any transaction.</p>
+                <p style="margin-bottom:24px;"><strong style="color:var(--cream);">Governing Law</strong><br>
+                    These terms are governed by the laws of South Australia, Australia. Any disputes will be subject to
+                    the exclusive jurisdiction of the courts of South Australia.</p>
+            </div>
+            <button onclick="document.getElementById('termsModal').style.display='none'"
+                style="background:var(--gold);color:var(--black);border:none;padding:12px 28px;font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;font-weight:600;cursor:pointer;">Close</button>
+        </div>
+    </div>
 
     <!-- STONE MODAL -->
     <div class="modal-overlay" id="modalOverlay">
@@ -1780,16 +1875,16 @@
         }
 
         // ── Grid ──
-function buildGrid(stones) {
-    const grid = document.getElementById('stoneGrid');
-    if (!stones.length) {
-        grid.innerHTML = '<div class="loading">No stones currently available.</div>';
-        return;
-    }
-    const certified = stones.filter(s => s.certification !== 'Pending');
-    const pending = stones.filter(s => s.certification === 'Pending');
+        function buildGrid(stones) {
+            const grid = document.getElementById('stoneGrid');
+            if (!stones.length) {
+                grid.innerHTML = '<div class="loading">No stones currently available.</div>';
+                return;
+            }
+            const certified = stones.filter(s => s.certification !== 'Pending');
+            const pending = stones.filter(s => s.certification === 'Pending');
 
-    grid.innerHTML = certified.map(s => `
+            grid.innerHTML = certified.map(s => `
             <div class="stone-card" onclick="openModal(${s.id})">
                 <div class="stone-card-media">
                     <img src="${s.thumbImage}" alt="${s.name}" loading="lazy">
@@ -1804,8 +1899,8 @@ function buildGrid(stones) {
             </div>
 `).join('');
 
-    if (pending.length) {
-        grid.innerHTML += `
+            if (pending.length) {
+                grid.innerHTML += `
         <div style="grid-column:1/-1;margin-top:40px;">
             <div style="display:flex;align-items:center;gap:20px;margin-bottom:24px;">
                 <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);white-space:nowrap;">Arriving Soon</div>
@@ -1825,8 +1920,8 @@ function buildGrid(stones) {
                 </div>`).join('')}
             </div>
         </div>`;
-    }
-}
+            }
+        }
 
         // ── Modal ──
         function openModal(id) {
