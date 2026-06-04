@@ -1779,7 +1779,13 @@
 
         // ── Enquiry ──
         function toggleEnquiry() {
-            document.getElementById('enquiryForm').classList.toggle('active');
+            const form = document.getElementById('enquiryForm');
+            form.classList.toggle('active');
+            if (form.classList.contains('active')) {
+                setTimeout(() => {
+                    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
         }
 
         function submitEnquiry() {
